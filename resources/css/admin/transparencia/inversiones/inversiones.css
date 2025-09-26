@@ -1,0 +1,41 @@
+.pdf-thumb,
+.img-thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .05);
+    font-size: 18px;
+}
+
+.pdf-thumb {
+    background: #FFE7D6;
+    color: #E86A34;
+}
+
+.img-thumb {
+    background: #EEF2F7;
+    color: #64748B;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: .55;
+    filter: grayscale(1);
+}
+
+#pdfFrame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.btn-pill {
+    border-radius: 999px
+}

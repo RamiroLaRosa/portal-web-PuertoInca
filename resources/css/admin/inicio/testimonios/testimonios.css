@@ -1,0 +1,14 @@
+.img-thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: #eef2f6;
+    cursor: pointer
+}
+
+.rating i {
+    margin: 0 1px
+}

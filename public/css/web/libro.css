@@ -1,0 +1,80 @@
+.scroll-smooth {
+    scroll-behavior: smooth
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px)
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible
+}
+
+.transition-all {
+    transition: all .3s ease
+}
+
+.form-card {
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)
+}
+
+.form-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04)
+}
+
+.step-card {
+    transition: all .3s ease
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, .1)
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #00264B 0%, #1A4FD3 50%, #4A84F7 100%)
+}
+
+.form-input {
+    transition: all .3s ease
+}
+
+.form-input:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 79, 211, .15)
+}
+
+.complaint-type-card {
+    transition: all .3s ease;
+    cursor: pointer
+}
+
+.complaint-type-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, .1)
+}
+
+.complaint-type-card.selected {
+    background: linear-gradient(135deg, #1A4FD3, #4A84F7);
+    color: #fff
+}
+
+.progress-step {
+    transition: all .5s ease
+}
+
+.progress-step.active {
+    background: linear-gradient(135deg, #E27227, #E27227);
+    color: #fff
+}
+
+.progress-step.completed {
+    background: linear-gradient(135deg, #1A4FD3, #4A84F7);
+    color: #fff
+}

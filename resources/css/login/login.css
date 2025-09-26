@@ -1,0 +1,432 @@
+:root {
+    --primary: #1e293b;
+    --secondary: #f8fafc;
+    --accent: #0f172a;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --success: #059669;
+    --error: #dc2626;
+    --radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Nuevo fondo inspirado en texturas elegantes y colores sofisticados */
+    background:
+        radial-gradient(circle at 25% 25%, rgba(30, 41, 59, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(15, 23, 42, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%, #f8fafc 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elementos decorativos de fondo mejorados */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Efecto de ondas sutiles inspirado en texturas de agua */
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(30, 41, 59, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(15, 23, 42, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(30, 41, 59, 0.02) 0%, transparent 50%);
+    animation: gentleWave 25s ease-in-out infinite;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Capa adicional con efecto de textura sutil */
+    background:
+        linear-gradient(45deg, transparent 48%, rgba(30, 41, 59, 0.01) 49%, rgba(30, 41, 59, 0.01) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(15, 23, 42, 0.01) 49%, rgba(15, 23, 42, 0.01) 51%, transparent 52%);
+    background-size: 120px 120px;
+    animation: subtleShift 30s linear infinite;
+    z-index: 1;
+}
+
+/* Nueva animación más suave y elegante */
+@keyframes gentleWave {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(20px, -15px) scale(1.02);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-10px, 10px) scale(0.98);
+        opacity: 0.9;
+    }
+
+    75% {
+        transform: translate(15px, -5px) scale(1.01);
+        opacity: 0.85;
+    }
+}
+
+/* Animación adicional para la textura */
+@keyframes subtleShift {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(10px) translateY(-10px);
+    }
+
+    50% {
+        transform: translateX(-5px) translateY(5px);
+    }
+
+    75% {
+        transform: translateX(8px) translateY(-3px);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Patrón geométrico mejorado */
+.geometric-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Patrón más sofisticado con múltiples capas */
+    opacity: 0.015;
+    background-image:
+        linear-gradient(30deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary)),
+        linear-gradient(150deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary)),
+        linear-gradient(30deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary)),
+        linear-gradient(150deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary));
+    background-size: 80px 140px, 80px 140px, 80px 140px, 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+    z-index: 2;
+    animation: patternFloat 40s ease-in-out infinite;
+}
+
+/* Animación para el patrón geométrico */
+@keyframes patternFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(0.5deg);
+    }
+}
+
+.login-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.institute-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.institute-logo::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--surface);
+    border-radius: 18px;
+}
+
+.institute-logo i {
+    font-size: 32px;
+    color: var(--primary);
+    position: relative;
+    z-index: 1;
+}
+
+.login-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-size: 14px;
+    letter-spacing: 0.025em;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--secondary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--primary);
+    background: var(--surface);
+    box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
+}
+
+.input-icon {
+    padding: 16px;
+    color: var(--text-secondary);
+    background: rgba(30, 41, 59, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+}
+
+.form-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 16px;
+    font-size: 15px;
+    color: var(--text-primary);
+    background: transparent;
+    font-weight: 400;
+}
+
+.form-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.toggle-password {
+    padding: 16px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+
+.login-button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(30, 41, 59, 0.2);
+}
+
+.login-button:hover::before {
+    left: 100%;
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+.alert {
+    background: #fef2f2;
+    color: var(--error);
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 14px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.alert i {
+    color: var(--error);
+}
+
+.divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+    position: relative;
+}
+
+.divider::after {
+    content: 'ACCESO INSTITUCIONAL';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--surface);
+    padding: 0 16px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Animaciones de entrada */
+.login-card {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .login-card {
+        padding: 32px 24px;
+        margin: 16px;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+}

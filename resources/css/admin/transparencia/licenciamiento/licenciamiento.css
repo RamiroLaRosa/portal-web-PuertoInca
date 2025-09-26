@@ -1,0 +1,26 @@
+  .btn-pill {
+      border-radius: 999px;
+  }
+
+  .pdf-thumb {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #FFE7D6;
+      color: #E86A34;
+      font-size: 18px;
+      box-shadow: inset 0 1px 0 rgba(0, 0, 0, .05);
+  }
+
+  .clickable {
+      cursor: pointer;
+  }
+
+  .disabled {
+      cursor: not-allowed;
+      opacity: .55;
+      filter: grayscale(1);
+  }

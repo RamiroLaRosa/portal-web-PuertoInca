@@ -1,0 +1,184 @@
+:root {
+    --teal: #3478F2;
+    --teal-600: #3478F2;
+    --card-bg: #fff;
+    --border: #e3eaef;
+    --sidebar-w: 290px;
+    --header-h: 72px;
+}
+
+/* 1) Sidebar siempre fijo a la izquierda */
+.sidebar-fixed {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    width: var(--sidebar-w);
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1030;
+    /* por debajo del header */
+    /* no cambiamos su fondo/estilos originales */
+}
+
+/* 2) Header fijo y desplazado por el sidebar */
+header,
+.app-header,
+.navbar,
+.nav-header {
+    position: fixed !important;
+    top: 0;
+    left: var(--sidebar-w);
+    width: calc(100% - var(--sidebar-w));
+    height: var(--header-h);
+    z-index: 1040;
+    /* sobre el sidebar y el contenido */
+}
+
+/* 3) Contenido: corre a la derecha y bajo el header */
+.app-content {
+    margin-left: var(--sidebar-w) !important;
+    padding: calc(var(--header-h) + 16px) 24px 24px !important;
+    /* deja espacio al header */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* 4) Footer: corre a la derecha como el contenido */
+footer,
+.app-footer {
+    margin-left: var(--sidebar-w);
+    width: calc(100% - var(--sidebar-w));
+}
+
+/* ====== RESPONSIVE: cuando el sidebar se colapsa (<= 991px) ====== */
+@media (max-width: 991.98px) {
+    .sidebar-fixed {
+        position: fixed !important;
+        transform: translateX(-100%);
+        /* asume sidebar oculto/collapsado */
+        width: var(--sidebar-w);
+    }
+
+    /* si abres el sidebar con una clase (ej. .is-open) */
+    .sidebar-fixed.is-open {
+        transform: translateX(0);
+    }
+
+    header,
+    .app-header,
+    .navbar,
+    .nav-header {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .app-content {
+        margin-left: 0 !important;
+        padding: calc(var(--header-h) + 12px) 12px 20px !important;
+    }
+
+    footer,
+    .app-footer {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* ====== (Opcional) Evita que algo se meta debajo del header por z-index ====== */
+.container-fluid,
+.card,
+.doc-card {
+    position: relative;
+    z-index: 1;
+}
+
+.text-teal {
+    color: var(--teal);
+}
+
+.btn-pill {
+    border-radius: 999px;
+}
+
+.btn-teal {
+    background: var(--teal);
+    color: #fff;
+    border: 0;
+    padding: 10px 16px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(15, 163, 166, .2);
+}
+
+.btn-teal:hover {
+    background: var(--teal-600);
+    color: #fff;
+}
+
+.doc-card {
+    border-radius: 14px !important;
+    box-shadow: 0 2px 14px rgba(16, 24, 40, .08) !important;
+    overflow: hidden;
+    background: var(--card-bg);
+}
+
+.mv-title {
+    color: #3478F2;
+    letter-spacing: .4px;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.doc-uploader .form-control {
+    height: 42px;
+    border-radius: 10px;
+}
+
+.pdf-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
+    background: #fff;
+    color: #64748b;
+    text-align: center;
+}
+
+.pdf-empty i {
+    font-size: 2.25rem;
+    opacity: .7;
+}
+
+.pdf-viewer-wrapper {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    min-height: 70vh;
+    /* alto grande tipo “lienzo” */
+}
+
+.pdf-frame {
+    width: 100%;
+    height: calc(100vh - 260px);
+    min-height: 560px;
+    border: 0;
+    display: block;
+}
+
+#fileName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 40ch;
+}
+
+/* Responsivo */
+@media (max-width: 991.98px) {
+    .pdf-frame {
+        height: 65vh;
+    }
+}

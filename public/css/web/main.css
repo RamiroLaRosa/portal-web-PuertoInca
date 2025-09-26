@@ -1,0 +1,42 @@
+/* ---------- Componentes & helpers del landing ---------- */
+
+/* Soporte para los estados group-hover usados en Tailwind */
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible;
+}
+
+/* Tarjeta de programas */
+.program-card {
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Tooltips simples basados en [title] */
+button[title] {
+    position: relative;
+    /* para posicionar el ::after */
+}
+
+button[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s;
+}

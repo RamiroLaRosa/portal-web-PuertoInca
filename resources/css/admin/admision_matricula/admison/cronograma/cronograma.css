@@ -1,0 +1,50 @@
+.icon-preview {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* Estilos para mejorar la visualización de la tabla */
+.table th:nth-child(4),
+/* Columna Descripción */
+.table td:nth-child(4) {
+    min-width: 250px;
+    /* Ancho mínimo aumentado */
+    max-width: 400px;
+    /* Ancho máximo para pantallas grandes */
+    word-wrap: break-word;
+}
+
+/* Ajustar otras columnas para compensar */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+    width: 50px;
+}
+
+/* # */
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    width: 120px;
+}
+
+/* Título */
+.table th:nth-child(3),
+.table td:nth-child(3) {
+    width: 120px;
+}
+
+/* Fecha */
+.table th:nth-child(5),
+.table td:nth-child(5) {
+    width: 80px;
+}
+
+/* Icono */
+.table th:nth-child(6),
+.table td:nth-child(6) {
+    width: 100px;
+}
+
+/* Acciones */

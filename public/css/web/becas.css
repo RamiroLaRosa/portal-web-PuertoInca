@@ -1,0 +1,63 @@
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.scholarship-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scholarship-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* NUEVA PALETA */
+/* #00264B (principal oscuro), #1A4FD3 (primario), #4A84F7 (primario claro),
+   #E27227 (acento), #DDE3E8 (gris claro) */
+
+.gradient-text {
+    background: linear-gradient(135deg, #1A4FD3, #4A84F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stats-counter {
+    font-variant-numeric: tabular-nums;
+}

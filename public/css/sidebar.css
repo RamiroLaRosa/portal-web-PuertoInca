@@ -1,0 +1,242 @@
+:root {
+    --sidebar-w: 290px;
+    --nav-header-h: 72px;
+
+    --brand-navy: #00264B;
+    --brand-blue: #1A4FD3;
+    --brand-sky: #4A84F7;
+    --brand-orange: #E27227;
+    --brand-gray: #DDE3E8;
+    --brand-white: #FFFFFF;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    color: #e9eef6;
+}
+
+.app {
+    display: block;
+}
+
+/* ===== Sidebar unificado ===== */
+.dlabnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-w);
+    height: 100vh;
+    background: var(--brand-navy);
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+}
+
+/* Header integrado */
+.sidebar-brand {
+    height: var(--nav-header-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+}
+
+.sidebar-brand .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.sidebar-brand .brand-title img {
+    display: block;
+}
+
+/* Scroll del menú */
+.dlabnav-scroll {
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: 12px 0;
+    background: var(--brand-navy);
+    scrollbar-color: rgba(221, 227, 232, .25) transparent;
+    scrollbar-width: thin;
+}
+
+/* ===== Lista principal ===== */
+.metismenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.metismenu>li {
+    margin: 2px 8px;
+}
+
+.metismenu>li>a {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    color: var(--brand-gray);
+    background: transparent;
+    border-radius: .6rem;
+    padding: .65rem .9rem;
+    transition: .2s ease;
+    text-decoration: none;
+}
+
+.metismenu>li>a .material-symbols-outlined {
+    font-size: 20px;
+    color: var(--brand-sky);
+}
+
+.metismenu>li>a:hover {
+    background: rgba(74, 132, 247, .18);
+    color: var(--brand-white);
+}
+
+.metismenu>li>a:hover .material-symbols-outlined {
+    color: var(--brand-white);
+}
+
+/* Activo de primer nivel */
+.metismenu .mm-active>a {
+    background: var(--brand-blue);
+    color: var(--brand-white);
+    position: relative;
+}
+
+.metismenu .mm-active>a .material-symbols-outlined {
+    color: var(--brand-white);
+}
+
+.metismenu .mm-active>a::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px;
+    background: var(--brand-orange);
+}
+
+/* ===== Submenús ===== */
+.metismenu ul {
+    list-style: none;
+    margin: 0 0 .3rem;
+    padding: .35rem .35rem .5rem;
+    background: rgba(0, 38, 75, .6);
+    border-left: 2px solid var(--brand-blue);
+    border-radius: .5rem;
+}
+
+.metismenu li>ul {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height .28s ease, opacity .28s ease;
+    will-change: height, opacity;
+}
+
+.metismenu li.mm-active>ul {
+    opacity: 1;
+}
+
+.metismenu ul li a {
+    display: block;
+    color: var(--brand-gray);
+    padding: .5rem .75rem;
+    border-radius: .45rem;
+    text-decoration: none;
+}
+
+.metismenu ul li a:hover {
+    background: rgba(26, 79, 211, .18);
+    color: var(--brand-white);
+}
+
+.metismenu ul .mm-active>a {
+    background: var(--brand-sky);
+    color: var(--brand-white);
+}
+
+/* Flechas personalizadas */
+.dlabnav .metismenu li>a.has-arrow {
+    display: flex !important;
+    align-items: center;
+    gap: .6rem;
+    position: relative;
+}
+
+.dlabnav .metismenu a.has-arrow::after {
+    display: none !important;
+    content: none !important;
+}
+
+.dlabnav .metismenu a.has-arrow .chev {
+    display: block !important;
+    width: 10px;
+    height: 10px;
+    margin-left: .25rem;
+    flex-shrink: 0;
+    border-right: 2px solid var(--brand-gray);
+    border-bottom: 2px solid var(--brand-gray);
+    transform: rotate(45deg);
+    transition: transform .28s ease, border-color .2s ease;
+    opacity: .95;
+}
+
+.dlabnav .metismenu li.mm-active>a.has-arrow .chev {
+    border-color: var(--brand-white);
+    transform: rotate(-135deg);
+}
+
+.nav-text {
+    font-weight: 600;
+}
+
+/* Iconos */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: #cbd5e1;
+}
+
+/* (Opcional) Contenido principal demo */
+.content {
+    background: transparent;
+    padding: 24px;
+}
+
+.metismenu>li>a,
+.dlabnav .metismenu li>a.has-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* evita que se separen */
+    gap: .5rem;
+    /* separa icono-texto-flecha lo justo */
+}
+
+.metismenu > li {
+    margin: 1px 8px;  /* todos los módulos separados igual */
+}
+
+/* antes: 2px 8px */
+.metismenu > li > a {
+    padding: .45rem .9rem;
+}
+

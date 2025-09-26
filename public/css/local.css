@@ -1,0 +1,306 @@
+:root {
+    --sidebar-w: 290px;
+    /* si tienes sidebar fijo, el main se separa */
+    --brand-teal: #1097a7;
+    /* color cabecera tabla (como en la imagen) */
+    --brand-bg: #f4f7fb;
+    /* fondo de la página */
+    --header-h: 64px;
+}
+
+body {
+    background: var(--brand-bg);
+}
+
+/* Simula área de contenido con sidebar a la izquierda (opcional) */
+.app-content {
+    margin-left: var(--sidebar-w);
+    padding: calc(var(--header-h) + 16px) 24px 32px;
+    /* deja espacio al header */
+    min-height: 100vh;
+    background: #eef3f8;
+    /* tu gris claro de fondo */
+}
+
+.roles-card {
+    border-radius: 14px !important;
+    box-shadow: 0 2px 14px rgba(16, 24, 40, .08) !important;
+    overflow: hidden;
+}
+
+.roles-card .card-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e9eef3;
+    padding: 16px 18px;
+}
+
+.btn-dark {
+    background: #3b4453 !important;
+    border: 0 !important;
+    padding: 8px 12px !important;
+}
+
+.btn-dark:hover {
+    background: #2f3642 !important;
+}
+
+.btn-new-role {
+    border-radius: 10px;
+    padding: 8px 14px !important;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, .15);
+}
+
+.search-wrap .search-input {
+    width: 220px;
+}
+
+.search-wrap {
+    min-width: 260px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .6;
+    font-size: .9rem;
+}
+
+.search-input {
+    border-radius: 10px !important;
+    padding-left: 34px !important;
+    height: 38px;
+    background: #fff;
+}
+
+.content-table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    background: #fff;
+    font-size: 0.975rem;
+}
+
+.content-table thead th {
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%) !important;
+    color: #fff !important;
+    border: 0 !important;
+    font-weight: 700 !important;
+    vertical-align: middle;
+    padding: 14px 18px !important;
+}
+
+.content-table thead th:not(:last-child) {
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, .16);
+}
+
+.content-table thead tr th:first-child {
+    border-top-left-radius: 12px;
+    text-align: center;
+    width: 60px;
+}
+
+.content-table thead tr th:last-child {
+    border-top-right-radius: 12px;
+    width: 140px;
+}
+
+
+.content-table tbody td {
+    background: #fff !important;
+    vertical-align: middle;
+    padding: 14px 18px !important;
+    border-top: 1px solid #eef2f7 !important;
+}
+
+.content-table tbody tr:hover td {
+    background: #f8fbff !important;
+}
+
+.content-table tbody tr+tr td {
+    border-top: 1px solid #eef3f7;
+}
+
+.content-table th:first-child,
+.content-table td:first-child {
+    width: 60px !important;
+    text-align: center !important;
+    color: #334155;
+}
+
+.content-table th:last-child {
+    width: 140px !important;
+}
+
+.pagination {
+    gap: 6px;
+}
+
+.pagination .page-link {
+    border: 1px solid #e5e7eb !important;
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-radius: 10px !important;
+    min-width: 34px;
+    text-align: center;
+    padding: 6px 10px;
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+}
+
+.pagination .page-item.active .page-link {
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #fff !important;
+}
+
+.pagination .page-item.disabled .page-link {
+    background: #f8fafc !important;
+    color: #94a3b8 !important;
+    border-color: #e5e7eb !important;
+}
+
+/* Contenedor de la tarjeta como en tu captura */
+.roles-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(16, 24, 40, .06);
+    padding: 0;
+}
+
+.content-table td:last-child {
+    text-align: center !important;
+}
+
+.content-table .btn.btn-warning.btn-sm {
+    border-radius: 10px;
+    padding: 6px 9px;
+}
+
+.content-table .btn.btn-danger.btn-sm {
+    border-radius: 10px;
+    padding: 6px 9px;
+}
+
+.table-responsive {
+    border-radius: 12px;
+}
+
+.btn-pill {
+    border-radius: 10px;
+}
+
+.btn-icon i {
+    font-size: .95rem;
+}
+
+.content-table td:last-child {
+    text-align: center !important;
+}
+
+.content-table .btn.btn-warning.btn-sm,
+.content-table .btn.btn-danger.btn-sm {
+    border-radius: 10px;
+    padding: 6px 9px;
+    box-shadow: 0 1px 0 rgba(15, 23, 42, .05);
+}
+
+/* Bordes redondeados del contenedor de la tabla */
+.table-responsive {
+    border-radius: 12px;
+}
+
+/* ===== Paginación tipo pills como en la imagen ===== */
+.pagination {
+    gap: 6px;
+}
+
+.pagination .page-link {
+    border: 1px solid #e5e7eb !important;
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-radius: 10px !important;
+    min-width: 34px;
+    text-align: center;
+    padding: 6px 10px;
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+}
+
+.pagination .page-item.active .page-link {
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #fff !important;
+}
+
+.pagination .page-item.disabled .page-link {
+    background: #f8fafc !important;
+    color: #94a3b8 !important;
+    border-color: #e5e7eb !important;
+}
+
+/* ===== Ajustes finos del título/toolbar para que calce exacto ===== */
+.roles-toolbar h5 {
+    color: #0f172a;
+    letter-spacing: .2px;
+}
+
+/* Columna Imagen: ancho fijo y centrado */
+.content-table th:nth-child(4),
+.content-table td:nth-child(4) {
+    width: 100px;
+    text-align: center !important;
+}
+
+/* Chip del ícono */
+.img-thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    /* gris claro */
+    border: 1px solid #e5e7eb;
+    /* borde sutil */
+    color: #64748b;
+    /* color del ícono */
+    box-shadow: 0 1px 0 rgba(15, 23, 42, .04);
+}
+
+.img-thumb i {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.code-cell .code-block {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    /* permite saltos de línea */
+    word-break: break-all;
+    /* corta URLs largas */
+    background: #F6F8FB;
+    border: 1px solid #DDE3E8;
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+
+.td-ellipsis {
+    max-width: 360px;
+    /* ajusta al ancho de tu columna */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.map-cell iframe {
+    width: 100%;
+    min-height: 340px;
+    border: 0;
+}
+
+.map-cell {
+    min-width: 640px;
+}
+

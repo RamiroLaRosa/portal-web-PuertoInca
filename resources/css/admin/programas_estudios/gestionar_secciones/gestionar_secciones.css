@@ -1,0 +1,45 @@
+.tab-panel {
+    display: none
+}
+
+.tab-panel.show {
+    display: block
+}
+
+.img-thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 36px;
+    border: 1px dashed #cfd4da;
+    border-radius: 6px;
+    background: #f8fafc
+}
+
+.table thead th {
+    background: #2368ef;
+    color: #fff
+}
+
+.btn-pill {
+    border-radius: 999px
+}
+
+.coord-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px
+}
+
+.area-img-preview,
+.egre-img-preview,
+.conv-img-preview,
+.gal-img-preview {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border: 1px dashed #cfd4da;
+    border-radius: 10px;
+    background: #f8f9fb
+}

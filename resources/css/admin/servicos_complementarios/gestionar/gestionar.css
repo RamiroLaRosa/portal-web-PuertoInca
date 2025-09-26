@@ -1,0 +1,59 @@
+ .btn-pill {
+     border-radius: 999px
+ }
+
+ .img-thumb {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 38px;
+     height: 38px;
+     border-radius: 10px;
+     background: #EEF2F7;
+     color: #64748B;
+     cursor: pointer;
+ }
+
+ .search-wrap .search-icon {
+     left: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     opacity: .5;
+     position: absolute;
+ }
+
+ .search-input {
+     padding-left: 28px
+ }
+
+ .content-table td {
+     vertical-align: top
+ }
+
+ /* La tabla respeta los anchos y permite scroll horizontal si no entra */
+ #tabla {
+     table-layout: fixed;
+     min-width: 1200px;
+     /* ajusta si quieres más/menos */
+ }
+
+ /* Alinear arriba y permitir que el texto envuelva */
+ #tabla th,
+ #tabla td {
+     vertical-align: top;
+ }
+
+ #tabla td {
+     white-space: normal;
+     word-break: break-word;
+ }
+
+ /* Botones compactos en “Acciones” */
+ #tabla .actions .btn {
+     width: 36px;
+     height: 36px;
+     padding: 0;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+ }

@@ -1,0 +1,25 @@
+.transition-all {
+    transition: all .3s ease
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px)
+}
+
+/* Paleta: #00264B, #1A4FD3, #4A84F7, #E27227, #DDE3E8 */
+.table-row:hover {
+    background-color: #DDE3E8
+}
+
+.search-highlight {
+    background-color: #DDE3E8;
+    font-weight: bold
+}

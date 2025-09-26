@@ -1,0 +1,17 @@
+#modalPreviewPdf .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa;
+    /* fondo suave */
+    padding: 0;
+}
+
+#pdfFrame {
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    border: none;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .15);
+    border-radius: 8px;
+}

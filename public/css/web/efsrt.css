@@ -1,0 +1,25 @@
+.program-card {
+    transition: all .3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+}
+
+button[title] {
+    position: relative;
+}
+
+button[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+}

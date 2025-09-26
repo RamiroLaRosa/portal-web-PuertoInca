@@ -1,0 +1,47 @@
+.scroll-smooth {
+    scroll-behavior: smooth
+}
+
+.service-card {
+    transition: all .3s ease
+}
+
+.service-card:hover {
+    transform: translateY(-5px)
+}
+
+.fade-in {
+    animation: fadeIn .6s ease-in
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.schedule-table {
+    border-collapse: collapse
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #e5e7eb;
+    padding: 12px
+}
+
+.schedule-table th {
+    background: #1A4FD3;
+    color: #fff;
+    font-weight: 600
+}
+
+.schedule-table tr:nth-child(even) {
+    background: #f9fafb
+}

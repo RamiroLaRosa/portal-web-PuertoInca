@@ -1,0 +1,27 @@
+ /* Solo para que el código del iframe se vea bien en la tabla */
+ .code-cell {
+     max-width: 620px;
+     min-width: 420px;
+ }
+
+ .code-box {
+     white-space: pre-wrap;
+     word-break: break-word;
+     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+     font-size: .85rem;
+     background: #0f172a0d;
+     border: 1px solid #e2e8f0;
+     border-radius: .5rem;
+     padding: .5rem .75rem;
+     max-height: 180px;
+     overflow: auto;
+ }
+
+ .btn-pill {
+     border-radius: 9999px;
+ }
+
+ .content-table th {
+     background: #2f6bed;
+     color: #fff;
+ }

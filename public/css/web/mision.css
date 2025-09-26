@@ -1,0 +1,51 @@
+.value-card {
+    transition: .3s ease
+}
+
+.value-card:hover {
+    transform: scale(1.05)
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #00264B, #1A4FD3, #4A84F7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.floating-element {
+    animation: float 9s ease-in-out infinite
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-18px)
+    }
+}
+
+.pulse-ring {
+    animation: pulse 2.4s cubic-bezier(.66, 0, 0, 1) infinite
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.9);
+        opacity: .35
+    }
+
+    70% {
+        transform: scale(1.15);
+        opacity: .1
+    }
+
+    100% {
+        transform: scale(.9);
+        opacity: .35
+    }
+}

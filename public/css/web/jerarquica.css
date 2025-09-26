@@ -1,0 +1,19 @@
+.staff-card {
+    transition: all .25s ease
+}
+
+.staff-card:hover {
+    transform: translateY(-2px)
+}
+
+.staff-image-container {
+    position: relative;
+    overflow: hidden
+}
+
+.staff-image-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .0), rgba(0, 0, 0, .05));
+}

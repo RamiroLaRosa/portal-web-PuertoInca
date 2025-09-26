@@ -1,0 +1,132 @@
+:root {
+    --header-h: 56px;
+    /* alto del header global (derecha) */
+    --header-offset: 16px;
+    --sidebar-w: 280px;
+    /* ancho del sidebar */
+    --bg: #f5f9ff;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--bg);
+    color: #0f172a;
+}
+
+/* =================== Dark =================== */
+body.dark {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+body.dark .card {
+    background: #0f1b2e;
+    color: #e5e7eb;
+}
+
+body.dark .header,
+body.dark .header-minimal,
+body.dark .app-header {
+    background: transparent !important;
+}
+
+/* Demo */
+.panelColor {
+    background: var(--primary, #1e90ff);
+    height: 64px;
+    border-radius: 10px;
+}
+
+.digits {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.digit {
+    width: 50px;
+    height: 80px;
+    background: #333;
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
+}
+
+/* =================== Responsive =================== */
+@media (max-width: 992px) {
+    :root {
+        --sidebar-w: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --sidebar-w: 0px;
+    }
+
+    .nav-header {
+        left: 0;
+        width: 100%;
+        height: var(--nav-header-h);
+    }
+
+    /* ocupa ancho completo si ocultas sidebar */
+    .sidebar-fixed {
+        display: none;
+    }
+
+    .header,
+    .header-minimal,
+    .app-header {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .content-with-sidebar {
+        margin-left: 0;
+    }
+}
+
+.header,
+.header-minimal,
+.app-header {
+    position: fixed;
+    top: var(--header-offset);
+    left: var(--sidebar-w);
+    width: calc(100% - var(--sidebar-w));
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 0 18px;
+    z-index: 1002;
+    background: transparent;
+    /* o #fff si lo prefieres sólido */
+}
+
+/* Contenido: empújalo hacia abajo para no quedar detrás del header */
+.content-with-sidebar {
+    padding-top: calc(var(--header-h) + var(--header-offset));
+}
+
+/* Responsive (si la sidebar se superpone en móviles) */
+@media (max-width: 991.98px) {
+
+    .header,
+    .header-minimal,
+    .app-header {
+        left: 0;
+        width: 100%;
+    }
+}

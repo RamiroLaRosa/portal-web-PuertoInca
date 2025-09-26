@@ -1,0 +1,33 @@
+.content-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.content-table th.col-id,
+.content-table td.col-id {
+    width: 60px;
+    /* ID compacto */
+}
+
+.content-table th.col-acciones,
+.content-table td.col-acciones {
+    width: 120px;
+    /* Botones */
+}
+
+/* Ajusta la proporción de las columnas principales */
+.content-table th.col-nombre,
+.content-table td.col-nombre {
+    width: 25%;
+}
+
+.content-table th.col-descripcion,
+.content-table td.col-descripcion {
+    width: 55%;
+}
+
+/* Permite saltos de línea para descripciones largas */
+.content-table td {
+    white-space: normal;
+    word-break: break-word;
+}

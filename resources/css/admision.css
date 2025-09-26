@@ -1,0 +1,186 @@
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.animate-count {
+    transition: all 0.1s ease-out;
+}
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.transform {
+    transform: translateY(0);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.translate-y-12 {
+    transform: translateY(3rem);
+}
+
+@media (min-width: 768px) {
+    .md\:transform {
+        transform: translateY(0);
+    }
+
+    .md\:translate-y-12 {
+        transform: translateY(3rem);
+    }
+}
+
+.pdf-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #0f172a;
+}
+
+/* ====== Sección Vacantes (CSS base) ====== */
+.vacancy-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.section-header {
+    margin-bottom: 48px;
+}
+
+.section-number {
+    color: #E27227;
+    /* brand.orange */
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #00264B;
+    /* brand.navy */
+}
+
+.section-description {
+    font-size: 1.25rem;
+    color: #475569;
+    margin-top: 16px;
+    max-width: 768px;
+}
+
+
+.card-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 32px;
+    text-align: center;
+    color: #00264B;
+    /* brand.navy */
+}
+
+.programs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.program-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .vacancy-card {
+        padding: 24px;
+    }
+
+    .program-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .total-number {
+        font-size: 2rem;
+    }
+}
+
+/* Estilo para los tooltips */
+button[title]:hover::after {
+    content: attr(title);
+    /* Usa el texto del atributo title */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    /* Fondo oscuro */
+    color: white;
+    /* Texto blanco */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    /* Evita que el texto se corte */
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Asegura que el tooltip aparezca cuando se pase el mouse por el botón */
+button[title]:hover::after {
+    opacity: 1;
+}

@@ -1,0 +1,59 @@
+.scroll-smooth {
+    scroll-behavior: smooth
+}
+
+.document-card {
+    transition: all .3s cubic-bezier(.4, 0, .2, 1)
+}
+
+.document-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04)
+}
+
+.filter-active {
+    background: linear-gradient(135deg, #1A4FD3, #4A84F7);
+    color: #fff
+}
+
+.search-highlight {
+    background: #DDE3E8;
+    padding: 2px 4px;
+    border-radius: 4px
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main,
+section,
+header,
+footer {
+    contain: inline-size;
+}
+
+.document-card h3,
+.document-card p {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+nav[role="navigation"]>div {
+    overflow-x: auto;
+}
+
+nav[role="navigation"] ul {
+    min-width: max-content;
+}
+
+img,
+iframe,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

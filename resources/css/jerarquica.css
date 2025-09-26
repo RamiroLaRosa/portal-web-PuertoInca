@@ -1,0 +1,107 @@
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.staff-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.search-highlight {
+    background-color: #fef3c7;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+/* Added styles for large square images */
+.staff-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.staff-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(234, 179, 8, 0.1) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.staff-card:hover .staff-image-container::before {
+    opacity: 1;
+}
+
+/* Estilo para los tooltips */
+button[title]:hover::after {
+    content: attr(title); /* Usa el texto del atributo title */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Evita que el texto se corte */
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Asegura que el tooltip aparezca cuando se pase el mouse por el botón */
+button[title]:hover::after {
+    opacity: 1;
+}

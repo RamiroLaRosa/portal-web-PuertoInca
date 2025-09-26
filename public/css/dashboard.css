@@ -1,0 +1,447 @@
+:root {
+    --primary: #00264B;
+    --card: #fff;
+    --card-2: #f8fafc;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f3f4f6;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial
+}
+
+body.dark {
+    /* Base */
+    --bg: #0b1220;
+    /* fondo principal */
+    --card: #0f1626;
+    /* card base (≈ +4–6% L sobre bg) */
+    --card-2: #121a2b;
+    /* card elevada (≈ +8–10% L) */
+    --border: #1c2741;
+    /* borde sutil */
+    --muted: #94a3b8;
+    /* textos secundarios */
+    --text: #e5e7eb;
+    /* texto principal */
+    --ring: rgba(30, 144, 255, .25);
+    /* tinte */
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px
+}
+
+.col {
+    flex: 1 1 0
+}
+
+.col-4 {
+    flex: 1 1 calc(33.333% - 16px)
+}
+
+.col-5 {
+    flex: 1 1 calc(41.666% - 16px)
+}
+
+.col-6 {
+    flex: 1 1 calc(50% - 16px)
+}
+
+.col-3 {
+    flex: 1 1 calc(25% - 16px)
+}
+
+@media (max-width:1024px) {
+
+    .col-6,
+    .col-5,
+    .col-4,
+    .col-3 {
+        flex: 1 1 100%
+    }
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+}
+
+/* ⛔ Quitamos el override que daba degradado al .card.hero en dark */
+body.dark .card.is-elevated {
+    background: linear-gradient(180deg, var(--card-2) 0%, var(--card) 100%);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .35), 0 0 0 1px var(--ring);
+}
+
+.card-header {
+    border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+    color: var(--primary);
+    font-weight: 700
+}
+
+.card-body {
+    padding: 16px
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid transparent;
+    background: var(--primary);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600
+}
+
+.btn:disabled {
+    opacity: .6;
+    cursor: not-allowed
+}
+
+.panelColor {
+    background-color: var(--primary);
+    height: 56px;
+    border-radius: 10px
+}
+
+.text-white {
+    color: #fff
+}
+
+.text-muted {
+    color: var(--muted)
+}
+
+.w-100 {
+    width: 100%
+}
+
+.rounded {
+    border-radius: 10px
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px
+}
+
+.table th,
+.table td {
+    border: 1px solid var(--border);
+    padding: 8px
+}
+
+.table th {
+    text-align: center;
+    background: #f8fafc
+}
+
+.table td {
+    text-align: center
+}
+
+.digits {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px
+}
+
+.digit {
+    width: 50px;
+    height: 80px;
+    background: #333;
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3)
+}
+
+/* ✅ HERO del dashboard con el MISMO color del sidebar */
+.hero {
+    background: #00264B;
+}
+
+/* para todos los temas */
+body.dark .hero {
+    background: #00264B;
+}
+
+/* explícito en dark también */
+.hero .card-header {
+    border-bottom: 0
+}
+
+.hero h1 {
+    margin: 0 0 6px 0;
+    font-size: 28px
+}
+
+/* Garantizamos texto blanco dentro del hero */
+.card.hero,
+.hero .card-title,
+.hero h1,
+.hero p {
+    color: #fff !important;
+}
+
+.flex {
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+.mb-2 {
+    margin-bottom: 12px
+}
+
+.mb-3 {
+    margin-bottom: 16px
+}
+
+.mt-0 {
+    margin-top: 0
+}
+
+.mt-2 {
+    margin-top: 12px
+}
+
+.mt-4 {
+    margin-top: 24px
+}
+
+.fs-5 {
+    font-size: 18px
+}
+
+.fs-3 {
+    font-size: 22px
+}
+
+a.btn {
+    text-decoration: none
+}
+
+/* Cabecera simple */
+.topbar {
+    background: #0f172a;
+    color: #fff
+}
+
+.topbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800
+}
+
+footer {
+    padding: 24px;
+    text-align: center;
+    color: var(--muted)
+}
+
+body.dark .table {
+    color: var(--text);
+    background: var(--card);
+    border-color: var(--border);
+}
+
+body.dark .table th {
+    background: var(--card-2);
+}
+
+body.dark .digit {
+    background: #2b3448;
+    /* un paso sobre el card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+}
+
+.programas-list {
+    max-height: 240px;
+    overflow: auto
+}
+
+.programas-list .programa-row {
+    padding: 10px 12px;
+    border-top: 1px solid var(--border, #e5e7eb);
+    color: #1f2937;
+    font-weight: 600
+}
+
+.programas-list .programa-row:first-child {
+    border-top: 0
+}
+
+/* cards que igualan altura (Programas y Acceso) */
+.card.js-eq {
+    display: grid;
+    grid-template-rows: auto 1fr
+}
+
+.card.js-eq .card-body {
+    min-height: 0
+}
+
+/* Acceso: imagen ocupa todo el body */
+#card-acceso .card-body {
+    display: flex
+}
+
+#card-acceso .card-body a {
+    flex: 1
+}
+
+#card-acceso img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+/* Héroe azul */
+.hero {
+    background: #00264B;
+    color: #fff
+}
+
+.hero .card-header {
+    border-bottom: 0
+}
+
+.hero .card-title {
+    color: #fff
+}
+
+/* DOCENTES a ancho completo y alto grande */
+#card-docentes-full .card-body {
+    display: flex
+}
+
+#docentesChartWrap {
+    flex: 1;
+    min-height: 0;
+    height: 520px
+}
+
+/* base */
+@media (min-width:768px) {
+    #docentesChartWrap {
+        height: 580px
+    }
+}
+
+/* md */
+@media (min-width:992px) {
+    #docentesChartWrap {
+        height: 640px
+    }
+}
+
+/* lg+ */
+#chartVisitas {
+    width: 100% !important;
+    height: 100% !important
+}
+
+.card.js-eq {
+    display: grid;
+    grid-template-rows: auto 1fr
+}
+
+.card.js-eq .card-body {
+    min-height: 0
+}
+
+/* Distribución pareja del card "Material de ayuda" */
+#card-material .help-grid {
+    display: grid;
+    height: 100%;
+    /* ocupa todo el alto del card */
+    grid-template-rows: repeat(3, 1fr);
+    /* 3 filas con misma altura   */
+    gap: 8px;
+}
+
+#card-material .help-row {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    /* icono | título | botón */
+    align-items: center;
+    column-gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+#card-material .help-row:last-child {
+    border-bottom: 0;
+}
+
+#card-material .help-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Botón un poco más compacto */
+#card-material .btn.btn-sm {
+    padding: 6px 12px;
+}
+
+/* Responsive: en pantallas muy pequeñas, botón a toda línea debajo del título */
+@media (max-width: 420px) {
+    #card-material .help-row {
+        grid-template-columns: 28px 1fr;
+        /* icono | título */
+        grid-template-rows: auto auto;
+        /* título y luego botón */
+        row-gap: 6px;
+    }
+
+    #card-material .help-row .btn {
+        grid-column: 1 / -1;
+        /* botón ocupa todo el ancho */
+        justify-self: start;
+        /* alineado a la izquierda */
+    }
+}

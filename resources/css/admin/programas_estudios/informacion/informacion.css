@@ -1,0 +1,17 @@
+  .roles-card {
+      border-radius: 14px;
+  }
+
+  .content-table thead th {
+      background: #2f66f0;
+      color: #fff;
+  }
+
+  .btn-teal {
+      background: #0fb;
+      color: #043;
+  }
+
+  .btn-pill {
+      border-radius: 999px;
+  }

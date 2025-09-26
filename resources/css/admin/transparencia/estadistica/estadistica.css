@@ -1,0 +1,25 @@
+   .btn-pill {
+       border-radius: 999px
+   }
+
+   .cell-actions {
+       gap: .25rem;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+
+   .cell-actions .btn {
+       --bs-btn-padding-y: .15rem;
+       --bs-btn-padding-x: .35rem;
+       --bs-btn-font-size: .75rem;
+   }
+
+   .empty-row td {
+       text-align: center;
+       color: #6c757d;
+   }
+
+   .chart-wrap {
+       min-height: 260px
+   }

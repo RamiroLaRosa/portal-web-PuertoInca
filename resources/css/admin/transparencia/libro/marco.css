@@ -1,0 +1,29 @@
+.content-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.content-table th.col-id,
+.content-table td.col-id {
+    width: 60px;
+}
+
+.content-table th.col-actions,
+.content-table td.col-actions {
+    width: 120px;
+}
+
+.content-table th.col-title,
+.content-table td.col-title {
+    width: 35%;
+}
+
+.content-table th.col-desc,
+.content-table td.col-desc {
+    width: 55%;
+}
+
+.content-table td {
+    white-space: normal;
+    word-break: break-word;
+}

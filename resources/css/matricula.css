@@ -1,0 +1,81 @@
+
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #1A4FD3, #4A84F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+
+.step-active {
+    background: linear-gradient(135deg, #1A4FD3, #4A84F7);
+}
+
+.step-completed {
+    background: #4A84F7;
+}
+
+.step-pending {
+    background: #DDE3E8;
+}
+
+/* Estilo para los tooltips */
+button[title]:hover::after {
+    content: attr(title); /* Usa el texto del atributo title */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Evita que el texto se corte */
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Asegura que el tooltip aparezca cuando se pase el mouse por el botón */
+button[title]:hover::after {
+    opacity: 1;
+}

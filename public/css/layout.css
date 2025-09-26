@@ -1,0 +1,9 @@
+.layout {
+    min-height: 100%;
+    padding-top: var(--header-h);
+}
+
+.content-with-sidebar {
+    margin-left: var(--sidebar-w);
+    padding: 24px;
+}  

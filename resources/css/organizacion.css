@@ -1,0 +1,145 @@
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.org-line {
+    position: relative;
+}
+
+.org-line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e5e7eb;
+    z-index: 1;
+}
+
+.org-line-vertical {
+    position: relative;
+}
+
+.org-line-vertical::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e5e7eb;
+    z-index: 1;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+/* Enhanced PDF embed styles */
+.pdf-embed-container {
+    background: linear-gradient(135deg, #f97316 0%, #eab308 100%);
+    border-radius: 16px;
+    padding: 2px;
+    box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04);
+}
+
+.pdf-embed-inner {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.pdf-controls {
+    background: linear-gradient(135deg, #f97316 0%, #eab308 100%);
+    color: white;
+}
+
+
+
+.pdf-loading {
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.pdf-error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.zoom-indicator {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.fullscreen-mode {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    background: white !important;
+}
+
+.fullscreen-mode .pdf-embed-inner {
+    height: 100vh;
+    border-radius: 0;
+}
+
+.fullscreen-mode iframe {
+    height: calc(100vh - 60px) !important;
+}

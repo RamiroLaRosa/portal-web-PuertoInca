@@ -1,0 +1,56 @@
+/* -------- Utilidades generales -------- */
+.scroll-smooth {
+    scroll-behavior: smooth
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px)
+}
+
+/* Tooltips simples usando title (solo desktop) */
+button[title] {
+    position: relative;
+}
+
+button[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 1;
+    pointer-events: none;
+}
+
+/* -------- Efectos hover personalizados -------- */
+.hover-raise {
+    transition: transform .35s ease, box-shadow .35s ease
+}
+
+.hover-raise:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .15)
+}
+
+.img-zoom {
+    transition: transform .6s ease
+}
+
+.group:hover .img-zoom {
+    transform: scale(1.08)
+}
+
+.fade-overlay {
+    opacity: 0;
+    transition: opacity .35s ease
+}
+
+.group:hover .fade-overlay {
+    opacity: 1
+}

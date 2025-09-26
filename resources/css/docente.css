@@ -1,0 +1,45 @@
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.transition-all {
+    transition: all .3s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .6s ease;
+}
+
+.fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para los tooltips */
+button[title]:hover::after {
+    content: attr(title); /* Usa el texto del atributo title */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Evita que el texto se corte */
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Asegura que el tooltip aparezca cuando se pase el mouse por el botón */
+button[title]:hover::after {
+    opacity: 1;
+}

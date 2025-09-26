@@ -1,0 +1,23 @@
+.btn-pill {
+    border-radius: 9999px
+}
+
+.content-table th {
+    background: #2f6bed;
+    color: #fff
+}
+
+.img-thumb-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+}
+
+.img-thumb-btn i {
+    color: #64748b
+}

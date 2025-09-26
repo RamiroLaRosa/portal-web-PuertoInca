@@ -1,0 +1,36 @@
+/* Estilos específicos para ampliar la columna Descripción */
+.table th:nth-child(3),
+/* Columna Descripción */
+.table td:nth-child(3) {
+    min-width: 400px !important;
+    /* Ancho mínimo aumentado significativamente */
+    max-width: 500px !important;
+    /* Ancho máximo para pantallas grandes */
+    width: 45% !important;
+    /* Porcentaje del ancho total */
+    word-wrap: break-word;
+}
+
+/* Ajustar las otras columnas */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+    width: 100px !important;
+    /* Nro de Paso */
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    width: 150px !important;
+    /* Título */
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+    width: 100px !important;
+    /* Acciones */
+}
+
+/* Asegurar que la tabla sea responsive */
+.table-responsive {
+    overflow-x: auto;
+}

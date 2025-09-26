@@ -1,0 +1,271 @@
+/* ===========================
+   Dark Mode Global Overrides
+   =========================== */
+
+/* ===== Fondo base ===== */
+html,
+body {
+    background-color: #f3f6fb; /* claro por defecto */
+}
+body.dark,
+body.dark html {
+    background-color: #0b1220; /* fondo global oscuro */
+}
+
+/* Wrappers comunes */
+body.dark main,
+body.dark .app-content,
+body.dark .layout,
+body.dark .content-with-sidebar,
+body.dark .page-main,
+body.dark .container-fluid {
+    background-color: transparent !important;
+}
+
+/* ===== Tipografía general ===== */
+body.dark,
+body.dark p,
+body.dark span,
+body.dark li,
+body.dark label,
+body.dark small,
+body.dark .text-muted,
+body.dark .card,
+body.dark .roles-card,
+body.dark .modal-content,
+body.dark .form-label,
+body.dark .form-check-label,
+body.dark .card-title,
+body.dark .modal-title,
+body.dark .nav-link,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+    color: #ffffff !important; /* texto blanco */
+}
+
+/* Enlaces */
+body.dark a {
+    color: #bfdbfe;
+}
+body.dark a:hover,
+body.dark a:focus {
+    color: #e0f2fe;
+}
+
+/* ===== Cards ===== */
+body.dark .card,
+body.dark .roles-card {
+    background-color: #0f1b2e;
+    border-color: #18243a;
+    color: #ffffff;
+}
+
+/* ===== Tablas (cuerpo oscuro + texto blanco) ===== */
+body.dark .table {
+    background-color: transparent;
+    border-color: #1f2b44;
+}
+body.dark .table thead th {
+    background-color: #1b3ea6;
+    color: #ffffff;
+    border-color: #274082;
+}
+body.dark .table tbody td,
+body.dark .table tbody th {
+    background-color: #0f1b2e !important; /* fondo oscuro */
+    color: #ffffff !important; /* texto blanco */
+    border-color: #1e2b44 !important; /* bordes oscuros */
+}
+/* Filas alternadas */
+body.dark .table tbody tr:nth-child(even) td,
+body.dark .table tbody tr:nth-child(even) th {
+    background-color: #13213a !important;
+}
+body.dark .table-bordered {
+    border-color: #1f2b44;
+}
+
+/* ===== Botones ===== */
+body.dark .btn-primary {
+    background-color: #2563eb;
+    border-color: #1d4ed8;
+    color: #ffffff;
+}
+body.dark .btn-dark {
+    background-color: #1f2937;
+    border-color: #111827;
+    color: #ffffff;
+}
+body.dark .btn-warning {
+    background-color: #ca8a04;
+    border-color: #a16207;
+    color: #ffffff;
+}
+body.dark .btn-danger {
+    background-color: #b91c1c;
+    border-color: #7f1d1d;
+    color: #ffffff;
+}
+body.dark .btn-outline-secondary {
+    color: #e5e7eb;
+    border-color: #334155;
+}
+body.dark .btn-outline-secondary:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+/* ===== Formularios ===== */
+body.dark .modal-content {
+    background-color: #0f1b2e;
+    border-color: #18243a;
+}
+body.dark .form-control,
+body.dark .form-select,
+body.dark .form-check-input {
+    background-color: #0e1623;
+    color: #ffffff;
+    border-color: #23314c;
+}
+body.dark .form-control::placeholder {
+    color: #cbd5e1;
+}
+body.dark .form-control:focus,
+body.dark .form-select:focus {
+    border-color: #3b82f6;
+    box-shadow: none;
+}
+
+/* ===== Dropdowns ===== */
+body.dark .dropdown-menu {
+    background-color: #0f1b2e;
+    color: #ffffff;
+    border-color: #18243a;
+}
+body.dark .dropdown-item {
+    color: #ffffff;
+}
+body.dark .dropdown-item:hover {
+    background-color: #12233a;
+    color: #ffffff;
+}
+
+/* ===== Alerts ===== */
+body.dark .alert {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-color: #334155;
+}
+
+/* ===== Header / toolbar ===== */
+body.dark .icon-btn {
+    background: #101826;
+    color: #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+body.dark .icon-btn:hover {
+    background: #0e1623;
+}
+
+/* ===== Corrección de base (antes tenías body.dark html) ===== */
+html, body { background-color: #f3f6fb; }
+html.dark, body.dark { background-color: #0b1220; }
+
+/* Wrappers */
+html.dark main,
+html.dark .app-content,
+html.dark .layout,
+html.dark .content-with-sidebar,
+html.dark .page-main,
+html.dark .container-fluid {
+  background-color: transparent !important;
+}
+
+/* Tipografía general */
+html.dark,
+html.dark p,
+html.dark span,
+html.dark li,
+html.dark label,
+html.dark small,
+html.dark .text-muted,
+html.dark .card,
+html.dark .roles-card,
+html.dark .modal-content,
+html.dark .form-label,
+html.dark .form-check-label,
+html.dark .card-title,
+html.dark .modal-title,
+html.dark .nav-link,
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: #ffffff !important;
+}
+
+/* ===== Cards genéricas ===== */
+html.dark .card,
+html.dark .roles-card {
+  background-color: #0f1b2e;
+  border-color: #18243a;
+  color: #ffffff;
+}
+
+/* ===== Card específica del coordinador ===== */
+html.dark .coord-card {
+  background-color: #0f1b2e;
+  border: 1px solid #18243a;
+  border-radius: .5rem;
+  color: #ffffff;
+}
+
+/* Inputs/selects/textarea */
+html.dark .form-control,
+html.dark .form-select,
+html.dark .form-check-input {
+  background-color: #0e1623;
+  color: #ffffff;
+  border-color: #23314c;
+}
+html.dark .form-control::placeholder { color: #cbd5e1; }
+html.dark .form-control:focus,
+html.dark .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: none;
+}
+
+/* Imagen de vista previa de coordinador */
+html.dark img.coord-preview {
+  background-color: #0e1623;
+  border: 1px dashed #23314c;
+  border-radius: .5rem;
+  max-width: 220px;
+}
+
+/* Tabs del módulo */
+html.dark .pe-tabs .nav-link {
+  background: transparent;
+  color: #e5e7eb !important;
+}
+html.dark .pe-tabs .nav-link.active {
+  color: #ffffff !important;
+  border-bottom: 2px solid #3b82f6;
+}
+
+/* Botones personalizados (si usas .btn-teal) */
+html.dark .btn-teal {
+  background-color: #116a7b;
+  border-color: #0f5663;
+  color: #ffffff;
+}
+html.dark .btn-teal:hover {
+  filter: brightness(1.05);
+}
+
+/* Tabla genérica ya la tienes, dejo ajuste fino */
+html.dark .table thead th {
+  background-color: #14284e;
+  border-color: #274082;
+}
