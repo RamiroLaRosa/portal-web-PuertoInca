@@ -5,7 +5,7 @@
             <!-- Logo del instituto (Imagen) visible en móvil y escritorio -->
             <div class="flex items-center space-x-2">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('images/Logo_Silfer.png') }}" alt="Logo NOVA" class="h-14 w-auto">
+                    <img src="{{ asset('images/Logo Puerto Inca.PNG') }}" alt="Logo Puerto Inca" class="h-14 w-auto">
                 </a>
             </div>
 
