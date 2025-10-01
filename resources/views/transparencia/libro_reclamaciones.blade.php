@@ -5,18 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Libro de Reclamaciones - Silfer Academia</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/web/libro.css">
 </head>
 
 <body class="min-h-screen bg-gray-50 text-[#212529] font-sans scroll-smooth">
     <!-- Navegación lateral -->
-    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8">
+    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8"
+        style="background-color: var(--color-primario-p1); color:#fff;">
         <div class="mb-12">
-            <div class="bg-[#E27227] text-white p-2 rounded-full">
+            <div class="bg-[#E27227] text-white p-2 rounded-full"
+                style="background-color: var(--color-secundario-s1); color:#fff;">
                 <i data-lucide="graduation-cap" class="h-6 w-6"></i>
             </div>
         </div>
@@ -56,24 +60,31 @@
         <div class="p-4">
             <nav class="flex flex-col space-y-4">
                 <button onclick="scrollToSection('hero')"
-                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">Inicio</button>
+                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">
+                    Inicio</button>
                 <button onclick="scrollToSection('informacion')"
-                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">Información</button>
+                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">
+                    Información</button>
                 <button onclick="scrollToSection('formulario')"
-                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">Formulario</button>
+                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">
+                    Formulario</button>
                 <button onclick="scrollToSection('proceso')"
-                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">Proceso</button>
+                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">
+                    Proceso</button>
                 <button onclick="scrollToSection('seguimiento')"
-                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">Seguimiento</button>
+                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">
+                    Seguimiento</button>
                 <button onclick="scrollToSection('derechos')"
-                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">Derechos</button>
+                    class="py-2 px-3 text-sm bg-gray-50 rounded-md hover:bg-[#DDE3E8] hover:text-[#1A4FD3] transition-colors text-left">
+                    Derechos</button>
             </nav>
         </div>
     </div>
 
     <main class="md:pl-20 pt-16">
         <!-- Hero Section -->
-        <section id="hero" class="py-20 gradient-bg text-white">
+        <section id="hero" class="py-20 gradient-bg text-white"
+            style="background-image:linear-gradient(to bottom right, var(--color-primario-p1), var(--color-primario-p2), var(--color-primario-p3)); color:#fff;">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h1 class="text-5xl md:text-7xl font-black mb-6">Libro de Reclamaciones</h1>
@@ -83,7 +94,8 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                         <button onclick="scrollToSection('formulario')"
-                            class="bg-white text-[#E27227] hover:bg-gray-100 rounded-full px-8 py-4 text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                            class="bg-white text-[#E27227] hover:bg-gray-100 rounded-full px-8 py-4 text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+                            style="color: var(--color-secundario-s1);">
                             Presentar Reclamación
                         </button>
                         <button onclick="scrollToSection('seguimiento')"
@@ -101,7 +113,8 @@
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-black mb-4">
-                            ¿Qué es el <span class="text-[#E27227]">Libro de Reclamaciones</span>?
+                            ¿Qué es el <span class="text-[#E27227]" style="color: var(--color-secundario-s1);">Libro de
+                                Reclamaciones</span>?
                         </h2>
                         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                             Es un instrumento de protección al consumidor que permite registrar quejas y reclamos sobre
@@ -113,7 +126,8 @@
                         <!-- Información principal -->
                         <div class="form-card rounded-2xl p-8 shadow-lg">
                             <div class="bg-[#E27227]/15 p-3 rounded-xl w-fit mb-6">
-                                <i data-lucide="info" class="h-8 w-8 text-[#E27227]"></i>
+                                <i data-lucide="info" class="h-8 w-8 text-[#E27227]"
+                                    style="color: var(--color-secundario-s1);"></i>
                             </div>
 
                             <h3 class="text-2xl font-bold mb-6">Información Importante</h3>
@@ -122,7 +136,8 @@
                                 @forelse($info as $item)
                                     <div class="flex items-start gap-3">
                                         <div class="bg-[#1A4FD3]/10 p-1 rounded-full mt-1">
-                                            <i data-lucide="check" class="h-4 w-4 text-[#1A4FD3]"></i>
+                                            <i data-lucide="check" class="h-4 w-4 text-[#1A4FD3]"
+                                                style="color: var(--color-primario-p2);"></i>
                                         </div>
                                         <div>
                                             <div class="font-semibold">{{ $item->titulo }}</div>
@@ -138,7 +153,8 @@
                         <!-- Tipos de reclamaciones -->
                         <div class="form-card rounded-2xl p-8 shadow-lg">
                             <div class="bg-[#E27227]/15 p-3 rounded-xl w-fit mb-6">
-                                <i data-lucide="list" class="h-8 w-8 text-[#E27227]"></i>
+                                <i data-lucide="list" class="h-8 w-8 text-[#E27227]"
+                                    style="color: var(--color-secundario-s1);"></i>
                             </div>
 
                             <h3 class="text-2xl font-bold mb-6">Tipos de Reclamaciones</h3>
@@ -153,10 +169,16 @@
                                             'sugerencia' => 'text-[#00264B]',
                                             default => 'text-[#00264B]',
                                         };
+                                        $styleColor = match ($name) {
+                                            'reclamo' => 'color: var(--color-secundario-s1);',
+                                            'queja' => 'color: var(--color-primario-p2);',
+                                            default => 'color: var(--color-primario-p1);',
+                                        };
                                     @endphp
 
                                     <div class="p-4 border border-gray-200 rounded-lg">
-                                        <div class="font-semibold {{ $color }} mb-2">{{ $t->nombre }}</div>
+                                        <div class="{{ $color }} mb-2" style="{{ $styleColor }}">
+                                            {{ $t->nombre }}</div>
                                         <div class="text-sm text-gray-600">{{ $t->descripcion }}</div>
                                     </div>
                                 @empty
@@ -170,7 +192,8 @@
                     <div class="form-card rounded-2xl p-8 shadow-lg">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="bg-[#1A4FD3]/15 p-3 rounded-xl">
-                                <i data-lucide="scale" class="h-8 w-8 text-[#1A4FD3]"></i>
+                                <i data-lucide="scale" class="h-8 w-8 text-[#1A4FD3]"
+                                    style="color: var(--color-primario-p2);"></i>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold">Marco Legal</h3>
@@ -184,7 +207,8 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 @foreach ($marco as $m)
                                     <div class="text-center p-4 bg-gray-50 rounded-xl">
-                                        <div class="font-semibold text-[#1A4FD3] mb-2">{{ $m->titulo }}</div>
+                                        <div class="font-semibold text-[#1A4FD3] mb-2"
+                                            style="color: var(--color-primario-p2);">{{ $m->titulo }}</div>
                                         <div class="text-sm text-gray-600">{{ $m->descripcion }}</div>
                                     </div>
                                 @endforeach
@@ -201,7 +225,8 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="text-center mb-12">
                         <h2 class="text-4xl md:text-5xl font-black mb-4">
-                            Presenta tu <span class="text-[#E27227]">Reclamación</span>
+                            Presenta tu <span class="text-[#E27227]"
+                                style="color: var(--color-secundario-s1);">Reclamación</span>
                         </h2>
                         <p class="text-xl text-gray-600">Completa el formulario con todos los datos requeridos</p>
                     </div>
@@ -232,7 +257,8 @@
                             <div id="step1" class="step-content">
                                 <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
                                     <div class="bg-[#E27227]/15 p-2 rounded-lg">
-                                        <i data-lucide="user" class="h-6 w-6 text-[#E27227]"></i>
+                                        <i data-lucide="user" class="h-6 w-6 text-[#E27227]"
+                                            style="color: var(--color-secundario-s1);"></i>
                                     </div>
                                     Información Personal
                                 </h3>
@@ -242,6 +268,7 @@
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Nombres *</label>
                                         <input type="text" id="nombres" required
                                             class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);"
                                             placeholder="Ingresa tus nombres">
                                     </div>
 
@@ -250,6 +277,7 @@
                                             *</label>
                                         <input type="text" id="apellidos" required
                                             class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);"
                                             placeholder="Ingresa tus apellidos">
                                     </div>
 
@@ -257,7 +285,8 @@
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Tipo de Documento
                                             *</label>
                                         <select id="tipoDocumento" required
-                                            class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent">
+                                            class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);">
                                             <option value="">Selecciona tipo</option>
                                             @foreach ($tiposDoc as $td)
                                                 <option value="{{ $td->id }}">
@@ -271,6 +300,7 @@
                                             Documento *</label>
                                         <input type="text" id="numeroDocumento" required
                                             class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);"
                                             placeholder="Número de documento">
                                     </div>
 
@@ -279,6 +309,7 @@
                                             *</label>
                                         <input type="tel" id="telefono" required
                                             class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);"
                                             placeholder="Número de teléfono">
                                     </div>
 
@@ -286,6 +317,7 @@
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
                                         <input type="email" id="email" required
                                             class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);"
                                             placeholder="correo@ejemplo.com">
                                     </div>
                                 </div>
@@ -295,7 +327,8 @@
                             <div id="step2" class="step-content hidden">
                                 <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
                                     <div class="bg-[#E27227]/15 p-2 rounded-lg">
-                                        <i data-lucide="clipboard-list" class="h-6 w-6 text-[#E27227]"></i>
+                                        <i data-lucide="clipboard-list" class="h-6 w-6 text-[#E27227]"
+                                            style="color: var(--color-secundario-s1);"></i>
                                     </div>
                                     Tipo de Reclamación
                                 </h3>
@@ -303,22 +336,24 @@
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                                     @foreach ($tipos as $t)
                                         @php
-                                            // Unos íconos y colores bonitos por nombre (opcional):
                                             $name = strtolower($t->nombre);
                                             $tone = match ($name) {
                                                 'reclamo' => [
                                                     'wrap' => 'bg-[#E27227]/15',
                                                     'icon' => 'text-[#E27227]',
+                                                    'style' => 'color: var(--color-secundario-s1);',
                                                     'iconName' => 'alert-circle',
                                                 ],
                                                 'queja' => [
                                                     'wrap' => 'bg-[#1A4FD3]/15',
                                                     'icon' => 'text-[#1A4FD3]',
+                                                    'style' => 'color: var(--color-primario-p2);',
                                                     'iconName' => 'frown',
                                                 ],
                                                 default => [
                                                     'wrap' => 'bg-[#00264B]/10',
                                                     'icon' => 'text-[#00264B]',
+                                                    'style' => 'color: var(--color-primario-p1);',
                                                     'iconName' => 'lightbulb',
                                                 ],
                                             };
@@ -328,7 +363,8 @@
                                             data-id="{{ $t->id }}" onclick="selectComplaintType(this)">
                                             <div class="{{ $tone['wrap'] }} p-3 rounded-full w-fit mx-auto mb-4">
                                                 <i data-lucide="{{ $tone['iconName'] }}"
-                                                    class="h-8 w-8 {{ $tone['icon'] }}"></i>
+                                                    class="h-8 w-8 {{ $tone['icon'] }}"
+                                                    style="{{ $tone['style'] }}"></i>
                                             </div>
                                             <div class="font-bold text-lg mb-2">{{ $t->nombre }}</div>
                                             <div class="text-sm text-gray-600">{{ $t->descripcion }}</div>
@@ -343,7 +379,8 @@
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Área Relacionada
                                             *</label>
                                         <select id="area" required
-                                            class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent">
+                                            class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);">
                                             <option value="">Selecciona área</option>
                                             <option value="academica">Área Académica</option>
                                             <option value="administrativa">Área Administrativa</option>
@@ -362,7 +399,8 @@
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Fecha del
                                             Incidente</label>
                                         <input type="date" id="fechaIncidente"
-                                            class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent">
+                                            class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);">
                                     </div>
                                 </div>
                             </div>
@@ -371,7 +409,8 @@
                             <div id="step3" class="step-content hidden">
                                 <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
                                     <div class="bg-[#E27227]/15 p-2 rounded-lg">
-                                        <i data-lucide="file-text" class="h-6 w-6 text-[#E27227]"></i>
+                                        <i data-lucide="file-text" class="h-6 w-6 text-[#E27227]"
+                                            style="color: var(--color-secundario-s1);"></i>
                                     </div>
                                     Detalle de la Reclamación
                                 </h3>
@@ -381,6 +420,7 @@
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Asunto *</label>
                                         <input type="text" id="asunto" required
                                             class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                            style="--tw-ring-color: var(--color-primario-p2);"
                                             placeholder="Resumen breve del motivo">
                                     </div>
 
@@ -389,7 +429,7 @@
                                             Detallada *</label>
                                         <textarea id="descripcion" required rows="6"
                                             class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
-                                            placeholder="Describe detalladamente los hechos..."></textarea>
+                                            style="--tw-ring-color: var(--color-primario-p2);" placeholder="Describe detalladamente los hechos..."></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -404,13 +444,19 @@
 
                                 <div class="ml-auto flex gap-4">
                                     <button type="button" id="nextBtn" onclick="changeStep(1)"
-                                        class="bg-[#E27227] hover:bg-[#c56120] text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                                        class="bg-[#E27227] hover:bg-[#c56120] text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                                        style="background-color: var(--color-secundario-s1);"
+                                        onmouseover="this.style.backgroundColor='#c56120'"
+                                        onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-secundario-s1')">
                                         Siguiente
                                         <i data-lucide="chevron-right" class="h-4 w-4 inline ml-2"></i>
                                     </button>
 
                                     <button type="submit" id="submitBtn"
-                                        class="bg-[#1A4FD3] hover:bg-[#173fb0] text-white px-6 py-3 rounded-lg font-medium transition-colors hidden">
+                                        class="bg-[#1A4FD3] hover:bg-[#173fb0] text-white px-6 py-3 rounded-lg font-medium transition-colors hidden"
+                                        style="background-color: var(--color-primario-p2);"
+                                        onmouseover="this.style.backgroundColor='#173fb0'"
+                                        onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p2')">
                                         <i data-lucide="send" class="h-4 w-4 inline mr-2"></i>
                                         Enviar Reclamación
                                     </button>
@@ -428,7 +474,8 @@
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-black mb-4">
-                            Proceso de <span class="text-[#E27227]">Atención</span>
+                            Proceso de <span class="text-[#E27227]"
+                                style="color: var(--color-secundario-s1);">Atención</span>
                         </h2>
                         <p class="text-xl text-gray-600 max-w-3xl mx-auto">Conoce cómo procesamos tu reclamación paso a
                             paso</p>
@@ -437,11 +484,12 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- Paso 1 -->
                         <div class="step-card text-center p-6 bg-[#E27227]/10 rounded-2xl">
-                            <div class="bg-[#E27227] text-white p-4 rounded-full w-fit mx-auto mb-6">
+                            <div class="bg-[#E27227] text-white p-4 rounded-full w-fit mx-auto mb-6"
+                                style="background-color: var(--color-secundario-s1); color:#fff;">
                                 <i data-lucide="file-plus" class="h-8 w-8"></i>
                             </div>
-                            <div
-                                class="bg-[#E27227] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+                            <div class="bg-[#E27227] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block"
+                                style="background-color: var(--color-secundario-s1); color:#fff;">
                                 Paso 1</div>
                             <h3 class="text-xl font-bold mb-3">Recepción</h3>
                             <p class="text-gray-600 text-sm">Tu reclamación es recibida y registrada en nuestro
@@ -450,11 +498,12 @@
 
                         <!-- Paso 2 -->
                         <div class="step-card text-center p-6 bg-[#E27227]/10 rounded-2xl">
-                            <div class="bg-[#E27227] text-white p-4 rounded-full w-fit mx-auto mb-6">
+                            <div class="bg-[#E27227] text-white p-4 rounded-full w-fit mx-auto mb-6"
+                                style="background-color: var(--color-secundario-s1); color:#fff;">
                                 <i data-lucide="search" class="h-8 w-8"></i>
                             </div>
-                            <div
-                                class="bg-[#E27227] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+                            <div class="bg-[#E27227] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block"
+                                style="background-color: var(--color-secundario-s1); color:#fff;">
                                 Paso 2</div>
                             <h3 class="text-xl font-bold mb-3">Evaluación</h3>
                             <p class="text-gray-600 text-sm">Nuestro equipo especializado analiza tu caso y recopila la
@@ -462,12 +511,14 @@
                         </div>
 
                         <!-- Paso 3 -->
-                        <div class="step-card text-center p-6 bg-[#DDE3E8] rounded-2xl">
-                            <div class="bg-[#1A4FD3] text-white p-4 rounded-full w-fit mx-auto mb-6">
+                        <div class="step-card text-center p-6 bg-[#DDE3E8] rounded-2xl"
+                            style="background-color: var(--color-neutral);">
+                            <div class="bg-[#1A4FD3] text-white p-4 rounded-full w-fit mx-auto mb-6"
+                                style="background-color: var(--color-primario-p2); color:#fff;">
                                 <i data-lucide="users" class="h-8 w-8"></i>
                             </div>
-                            <div
-                                class="bg-[#1A4FD3] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+                            <div class="bg-[#1A4FD3] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block"
+                                style="background-color: var(--color-primario-p2); color:#fff;">
                                 Paso 3</div>
                             <h3 class="text-xl font-bold mb-3">Investigación</h3>
                             <p class="text-gray-600 text-sm">Se coordina con las áreas involucradas para investigar los
@@ -476,11 +527,12 @@
 
                         <!-- Paso 4 -->
                         <div class="step-card text-center p-6 bg-[#1A4FD3]/10 rounded-2xl">
-                            <div class="bg-[#4A84F7] text-white p-4 rounded-full w-fit mx-auto mb-6">
+                            <div class="bg-[#4A84F7] text-white p-4 rounded-full w-fit mx-auto mb-6"
+                                style="background-color: var(--color-primario-p3); color:#fff;">
                                 <i data-lucide="check-circle" class="h-8 w-8"></i>
                             </div>
-                            <div
-                                class="bg-[#4A84F7] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+                            <div class="bg-[#4A84F7] text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block"
+                                style="background-color: var(--color-primario-p3); color:#fff;">
                                 Paso 4</div>
                             <h3 class="text-xl font-bold mb-3">Respuesta</h3>
                             <p class="text-gray-600 text-sm">Te enviamos la respuesta oficial con las acciones tomadas
@@ -497,7 +549,8 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-black mb-4">
-                            Seguimiento de <span class="text-[#E27227]">Reclamaciones</span>
+                            Seguimiento de <span class="text-[#E27227]"
+                                style="color: var(--color-secundario-s1);">Reclamaciones</span>
                         </h2>
                         <p class="text-xl text-gray-600">Consulta el estado de tu reclamación en tiempo real</p>
                     </div>
@@ -505,7 +558,8 @@
                     <div class="form-card rounded-2xl p-8 shadow-lg">
                         <div class="text-center mb-8">
                             <div class="bg-[#E27227]/15 p-4 rounded-full w-fit mx-auto mb-6">
-                                <i data-lucide="search" class="h-12 w-12 text-[#E27227]"></i>
+                                <i data-lucide="search" class="h-12 w-12 text-[#E27227]"
+                                    style="color: var(--color-secundario-s1);"></i>
                             </div>
                             <h3 class="text-2xl font-bold mb-4">Buscar mi Reclamación</h3>
                             <p class="text-gray-600">Ingresa tu código de seguimiento o número de documento</p>
@@ -518,19 +572,24 @@
                                         Documento</label>
                                     <input type="text" id="documentoBusqueda"
                                         class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                        style="--tw-ring-color: var(--color-primario-p2);"
                                         placeholder="Número de DNI, CE o Pasaporte">
                                 </div>
 
-                                <!-- En la sección de seguimiento, agrega el input -->
                                 <div>
                                     <label class="block text-sm font-semibold text-gray-700 mb-2">Código de
                                         Reclamo</label>
-                                    <input type="text" id="codigoBusqueda" class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                    <input type="text" id="codigoBusqueda"
+                                        class="form-input w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                        style="--tw-ring-color: var(--color-primario-p2);"
                                         placeholder="Ejemplo: LR-12345678">
                                 </div>
 
                                 <button onclick="buscarReclamacion()"
-                                    class="w-full bg-[#E27227] hover:bg-[#c56120] text-white py-3 rounded-xl font-semibold transition-colors">
+                                    class="w-full bg-[#E27227] hover:bg-[#c56120] text-white py-3 rounded-xl font-semibold transition-colors"
+                                    style="background-color: var(--color-secundario-s1);"
+                                    onmouseover="this.style.backgroundColor='#c56120'"
+                                    onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-secundario-s1')">
                                     <i data-lucide="search" class="h-4 w-4 inline mr-2"></i>
                                     Buscar Reclamación
                                 </button>
@@ -546,8 +605,8 @@
                                             <div class="font-bold text-lg">Reclamación #REC-2025-001234</div>
                                             <div class="text-sm text-gray-600">Presentada el 15 de Enero, 2025</div>
                                         </div>
-                                        <div
-                                            class="bg-[#DDE3E8] text-[#00264B] px-3 py-1 rounded-full text-sm font-medium">
+                                        <div class="bg-[#DDE3E8] text-[#00264B] px-3 py-1 rounded-full text-sm font-medium"
+                                            style="background-color: var(--color-neutral); color: var(--color-primario-p1);">
                                             En Proceso</div>
                                     </div>
                                     <div class="text-gray-700"><strong>Asunto:</strong> Problema con el sistema de
@@ -557,7 +616,8 @@
                                 <!-- Timeline -->
                                 <div class="space-y-4">
                                     <div class="flex items-start gap-4">
-                                        <div class="bg-[#1A4FD3] p-2 rounded-full">
+                                        <div class="bg-[#1A4FD3] p-2 rounded-full"
+                                            style="background-color: var(--color-primario-p2);">
                                             <i data-lucide="check" class="h-4 w-4 text-white"></i>
                                         </div>
                                         <div class="flex-1">
@@ -569,7 +629,8 @@
                                     </div>
 
                                     <div class="flex items-start gap-4">
-                                        <div class="bg-[#1A4FD3] p-2 rounded-full">
+                                        <div class="bg-[#1A4FD3] p-2 rounded-full"
+                                            style="background-color: var(--color-primario-p2);">
                                             <i data-lucide="check" class="h-4 w-4 text-white"></i>
                                         </div>
                                         <div class="flex-1">
@@ -581,7 +642,8 @@
                                     </div>
 
                                     <div class="flex items-start gap-4">
-                                        <div class="bg-[#E27227] p-2 rounded-full">
+                                        <div class="bg-[#E27227] p-2 rounded-full"
+                                            style="background-color: var(--color-secundario-s1);">
                                             <i data-lucide="clock" class="h-4 w-4 text-white"></i>
                                         </div>
                                         <div class="flex-1">
@@ -604,12 +666,15 @@
                                     </div>
                                 </div>
 
-                                <div class="mt-8 p-4 bg-[#DDE3E8] rounded-xl">
+                                <div class="mt-8 p-4 bg-[#DDE3E8] rounded-xl"
+                                    style="background-color: var(--color-neutral);">
                                     <div class="flex items-center gap-2 mb-2">
-                                        <i data-lucide="info" class="h-5 w-5 text-[#00264B]"></i>
-                                        <span class="font-semibold text-[#00264B]">Información Adicional</span>
+                                        <i data-lucide="info" class="h-5 w-5 text-[#00264B]"
+                                            style="color: var(--color-primario-p1);"></i>
+                                        <span class="font-semibold text-[#00264B]"
+                                            style="color: var(--color-primario-p1);">Información Adicional</span>
                                     </div>
-                                    <p class="text-sm text-[#00264B]">
+                                    <p class="text-sm text-[#00264B]" style="color: var(--color-primario-p1);">
                                         Si tienes información adicional que pueda ayudar con tu caso,
                                         puedes contactarnos al correo: reclamaciones@novaacademia.edu
                                     </p>
@@ -627,7 +692,8 @@
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-black mb-4">
-                            Tus <span class="text-[#E27227]">Derechos</span>
+                            Tus <span class="text-[#E27227]"
+                                style="color: var(--color-secundario-s1);">Derechos</span>
                         </h2>
                         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                             Conoce tus derechos como consumidor de servicios educativos
@@ -635,7 +701,6 @@
                     </div>
 
                     @php
-                        // Paleta suave para el badge del ícono (puedes ajustar colores)
                         $palette = [
                             ['bg' => 'bg-orange-100', 'icon' => 'text-orange-500'],
                             ['bg' => 'bg-blue-100', 'icon' => 'text-blue-500'],
@@ -654,7 +719,6 @@
                                 @php $c = $palette[$i % count($palette)]; @endphp
                                 <div class="form-card rounded-2xl p-6 shadow-lg">
                                     <div class="{{ $c['bg'] }} p-3 rounded-xl w-fit mb-4">
-                                        {{-- Ícono Font Awesome guardado en BD (ej: "fa-solid fa-user-shield") --}}
                                         <i class="{{ $d->icono }} {{ $c['icon'] }} text-2xl"></i>
                                     </div>
                                     <h3 class="text-xl font-bold mb-3">{{ $d->titulo }}</h3>
@@ -668,7 +732,8 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 gradient-bg text-white">
+        <section class="py-20 gradient-bg text-white"
+            style="background-image:linear-gradient(to bottom right, var(--color-primario-p1), var(--color-primario-p2), var(--color-primario-p3)); color:#fff;">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-4xl md:text-5xl font-black mb-6">Tu Voz es Importante</h2>
@@ -678,7 +743,8 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                         <button onclick="scrollToSection('formulario')"
-                            class="bg-white text-[#E27227] hover:bg-gray-100 rounded-full px-8 py-4 text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                            class="bg-white text-[#E27227] hover:bg-gray-100 rounded-full px-8 py-4 text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+                            style="color: var(--color-secundario-s1);">
                             Presentar Nueva Reclamación
                         </button>
                     </div>
@@ -691,20 +757,15 @@
 
     <!-- Modal de éxito -->
     <div id="successModal" class="fixed inset-0 z-[100] hidden">
-        <!-- fondo -->
         <div id="successOverlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-        <!-- panel -->
         <div id="successPanel"
-            class="relative mx-auto my-10 w-[95%] max-w-md bg-white rounded-2xl shadow-2xl p-6
-                transition-all duration-200 opacity-0 scale-95">
-            <!-- cerrar -->
+            class="relative mx-auto my-10 w-[95%] max-w-md bg-white rounded-2xl shadow-2xl p-6 transition-all duration-200 opacity-0 scale-95">
             <button id="sm-close" class="absolute right-3 top-3 p-2 rounded-full hover:bg-gray-100"
                 aria-label="Cerrar">
                 <i data-lucide="x" class="w-5 h-5 text-gray-500"></i>
             </button>
 
-            <!-- icono -->
             <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
                 <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
             </div>
@@ -714,7 +775,6 @@
                 La estaremos revisando en unos instantes. Gracias por confiar en nosotros.
             </p>
 
-            <!-- resumen -->
             <div class="mt-5 bg-gray-50 rounded-xl p-4 text-sm">
                 <div class="grid grid-cols-1 gap-1">
                     <div><span class="text-gray-500">ID:</span> <span id="sm-id" class="font-semibold">—</span>
@@ -728,10 +788,12 @@
                 </div>
             </div>
 
-            <!-- acciones -->
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button id="sm-track"
-                    class="w-full py-2.5 rounded-xl font-semibold bg-[#1A4FD3] text-white hover:bg-[#173fb0] transition">
+                    class="w-full py-2.5 rounded-xl font-semibold bg-[#1A4FD3] text-white hover:bg-[#173fb0] transition"
+                    style="background-color: var(--color-primario-p2);"
+                    onmouseover="this.style.backgroundColor='#173fb0'"
+                    onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p2')">
                     Ver estado
                 </button>
                 <button id="sm-new"
@@ -743,30 +805,25 @@
     </div>
 
     <!-- Modal Detalle de Reclamación -->
-    <!-- Modal Detalle de Reclamación -->
     <div id="detailModal"
         class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/50 backdrop-blur-sm">
-        <!-- Fondo -->
         <div id="detailOverlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-        <!-- Panel -->
         <div id="detailPanel"
-            class="relative w-[95%] max-w-2xl bg-white rounded-2xl shadow-2xl p-6
-         transition-all duration-200 opacity-0 scale-95">
-            <!-- Cerrar -->
+            class="relative w-[95%] max-w-2xl bg-white rounded-2xl shadow-2xl p-6 transition-all duration-200 opacity-0 scale-95">
             <button id="dm-close" class="absolute right-3 top-3 p-2 rounded-full hover:bg-gray-100"
                 aria-label="Cerrar">
-                <i data-lucide="x" class="w-5 h-5 text-gray-500"></i>
+                <i data-lucide="x" class="h-5 w-5 text-gray-500"></i>
             </button>
 
             <div class="flex items-center gap-3 mb-4">
                 <div class="bg-[#E27227]/15 p-2 rounded-xl">
-                    <i data-lucide="file-text" class="w-6 h-6 text-[#E27227]"></i>
+                    <i data-lucide="file-text" class="w-6 h-6 text-[#E27227]"
+                        style="color: var(--color-secundario-s1);"></i>
                 </div>
                 <h3 class="text-2xl font-black">Detalle de la Reclamación</h3>
             </div>
 
-            <!-- Encabezado -->
             <div class="grid sm:grid-cols-2 gap-4 mb-4 text-sm">
                 <div><span class="text-gray-500">ID:</span> <span id="dm-id" class="font-semibold">—</span></div>
                 <div><span class="text-gray-500">Fecha:</span> <span id="dm-fecha" class="font-semibold">—</span>
@@ -782,13 +839,11 @@
                 </div>
             </div>
 
-            <!-- Asunto -->
             <div class="mb-3">
                 <div class="text-gray-500 text-sm">Asunto</div>
                 <div id="dm-asunto" class="font-semibold text-lg">—</div>
             </div>
 
-            <!-- Descripción -->
             <div>
                 <div class="text-gray-500 text-sm">Descripción</div>
                 <div class="mt-2 max-h-[60vh] overflow-y-auto pr-1">
@@ -796,10 +851,8 @@
                 </div>
             </div>
 
-            <!-- Línea divisora -->
             <hr class="my-6 border-gray-200">
 
-            <!-- Respuesta / Documento (se muestra solo si existe algo) -->
             <div id="dm-respuesta-wrap" class="space-y-3 hidden">
                 <div>
                     <div class="text-gray-500 text-sm">Fecha de respuesta</div>
@@ -813,7 +866,10 @@
 
                 <div>
                     <button id="dm-ver-doc"
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1A4FD3] text-white hover:bg-[#173fb0]">
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#1A4FD3] text-white hover:bg-[#173fb0]"
+                        style="background-color: var(--color-primario-p2);"
+                        onmouseover="this.style.backgroundColor='#173fb0'"
+                        onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p2')">
                         <i data-lucide="file-text" class="w-4 h-4"></i>
                         Ver documento
                     </button>
@@ -822,7 +878,10 @@
 
             <div class="mt-6 flex justify-end">
                 <button id="dm-ok"
-                    class="px-5 py-2 rounded-xl bg-[#1A4FD3] text-white hover:bg-[#173fb0] font-semibold">
+                    class="px-5 py-2 rounded-xl bg-[#1A4FD3] text-white hover:bg-[#173fb0] font-semibold"
+                    style="background-color: var(--color-primario-p2);"
+                    onmouseover="this.style.backgroundColor='#173fb0'"
+                    onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p2')">
                     Cerrar
                 </button>
             </div>

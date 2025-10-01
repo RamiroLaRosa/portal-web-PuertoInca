@@ -14,11 +14,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#00264B',
-                            blue: '#1A4FD3',
-                            sky: '#4A84F7',
-                            orange: '#E27227',
-                            gray: '#DDE3E8'
+                            navy: "var(--color-primario-p1)",
+                            blue: "var(--color-primario-p2)",
+                            sky: "var(--color-primario-p3)",
+                            orange: "var(--color-secundario-s1)",
+                            gray: "var(--color-neutral)",
                         },
                     },
                     container: {
@@ -40,12 +40,14 @@
     <link rel="stylesheet" href="/css/web/efsrt.css">
 </head>
 
-<body class="min-h-screen bg-brand-gray text-brand-navy font-sans scroll-smooth">
+<body class="min-h-screen bg-brand-gray text-brand-navy font-sans scroll-smooth"
+    style="background-color: var(--color-neutral); color: var(--color-primario-p1);">
     <!-- Sidebar -->
     <aside
         class="fixed inset-x-0 bottom-0 md:inset-auto md:top-0 md:left-0 md:h-full md:w-20 z-50 flex md:flex-col items-center justify-center md:justify-start bg-white/80 md:bg-brand-navy/100 backdrop-blur md:backdrop-blur-0 border-t md:border-none">
         <div class="hidden md:block mb-8 mt-8">
-            <div class="bg-brand-orange text-white p-2 rounded-full">
+            <div class="bg-brand-orange text-white p-2 rounded-full"
+                style="background-color: var(--color-secundario-s1);">
                 <i data-lucide="heart-pulse" class="h-6 w-6"></i>
             </div>
         </div>
@@ -56,6 +58,7 @@
                 <button onclick="scrollToSection('{{ $sid }}')"
                     class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
                     data-section="{{ $sid }}" title="{{ $p->nombre }}">
+                    {{-- NO se fuerza style aquí para no romper md:bg-white (punto blanco en desktop) --}}
                     <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
                 </button>
             @endforeach
@@ -68,21 +71,30 @@
 
         <section class="py-20 relative overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-orange/10 to-brand-sky/10">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-orange/10 to-brand-sky/10"
+                    style="background-image: linear-gradient(
+                        to bottom right,
+                        color-mix(in srgb, var(--color-secundario-s1) 10%, transparent),
+                        color-mix(in srgb, var(--color-primario-p3) 10%, transparent)
+                     );">
                 </div>
-                <div class="floating-element absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-brand-orange/20">
+                <div class="floating-element absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-brand-orange/20"
+                    style="background-color: color-mix(in srgb, var(--color-secundario-s1) 20%, transparent);">
                 </div>
                 <div class="floating-element absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full bg-brand-sky/20"
-                    style="animation-delay:-3s"></div>
+                    style="background-color: color-mix(in srgb, var(--color-primario-p3) 20%, transparent); animation-delay:-3s">
+                </div>
                 <div class="floating-element absolute top-1/2 right-1/3 w-32 h-32 rounded-full bg-brand-blue/30"
-                    style="animation-delay:-1.5s"></div>
+                    style="background-color: color-mix(in srgb, var(--color-primario-p2) 30%, transparent); animation-delay:-1.5s">
+                </div>
             </div>
             <div class="container mx-auto px-4 md:px-12 z-10 relative text-center">
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
                     Nuestros<span class="gradient-text"> Convenios</span>
                 </h1>
                 <p class="text-xl text-brand-navy/70 max-w-4xl mx-auto mb-8">
-                    Conoce las alianzas estratégicas que fortalecen nuestra formación académica y profesional, acercándonos a empresas líderes a nivel mundial.
+                    Conoce las alianzas estratégicas que fortalecen nuestra formación académica y profesional,
+                    acercándonos a empresas líderes a nivel mundial.
                 </p>
             </div>
         </section>
@@ -93,16 +105,19 @@
                 $isGray = $loop->iteration % 2 === 0;
             @endphp
 
-            <section id="{{ $sid }}" class="py-16 md:py-20 {{ $isGray ? 'bg-brand-gray' : 'bg-white' }}">
+            <section id="{{ $sid }}" class="py-16 md:py-20 {{ $isGray ? 'bg-brand-gray' : 'bg-white' }}"
+                @if ($isGray) style="background-color: var(--color-neutral);" @endif>
                 <div class="container">
                     <div class="text-center mb-12">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-8">{{ $p->nombre }}
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-8"
+                            style="color: var(--color-primario-p1);">
+                            {{ $p->nombre }}
                         </h2>
                     </div>
 
                     @if ($p->convenios->isEmpty())
-                        <div
-                            class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 text-center text-brand-navy">
+                        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 text-center text-brand-navy"
+                            style="color: var(--color-primario-p1);">
                             Aún no se han registrado <strong>convenios</strong> para este programa.
                         </div>
                     @else
@@ -116,14 +131,15 @@
 
                                         {{-- NOMBRE DEL CONVENIO / ENTIDAD --}}
                                         <p class="w-full text-center font-semibold text-brand-navy mb-4 px-2 truncate"
-                                            title="{{ $c->entidad }}">
+                                            title="{{ $c->entidad }}" style="color: var(--color-primario-p1);">
                                             {{ $c->entidad }}
                                         </p>
 
                                         @if ($c->documento_url)
                                             <a href="{{ $c->documento_url }}" target="_blank" rel="noopener"
                                                 class="bg-brand-orange text-white px-6 py-2 rounded-full hover:bg-brand-orange/90 transition-colors flex items-center gap-2"
-                                                title="Descargar documento del convenio">
+                                                title="Descargar documento del convenio"
+                                                style="background-color: var(--color-secundario-s1);">
                                                 <i data-lucide="download" class="h-4 w-4"></i>
                                                 Descargar
                                             </a>

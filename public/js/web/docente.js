@@ -385,3 +385,122 @@ async function openLaboral(docenteId) {
   }
 }
 window.openLaboral = openLaboral;
+
+// =========================
+// MODAL: Unidades Didácticas (DINÁMICO)
+// =========================
+async function openUD(docenteId) {
+  const modal   = document.getElementById("teacherModal");
+  const titleEl = document.getElementById("modalTitle");
+  const bodyEl  = document.getElementById("modalContent");
+
+  // Loading
+  titleEl.textContent = "Unidades Didácticas";
+  bodyEl.innerHTML = `
+    <div class="py-10 text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-blue mx-auto mb-4"></div>
+      <p class="text-brand-navy/70">Cargando información...</p>
+    </div>`;
+  modal.classList.remove("hidden");
+
+  try {
+    const base = DOCENTE_BASE_URL || document.body.dataset.docenteBaseUrl || "/docente";
+    const res  = await fetch(`${base}/${docenteId}/unidades`, { headers: { Accept: "application/json" }});
+    if (!res.ok) throw new Error("Error HTTP");
+    const data = await res.json();
+    if (!data.ok) throw new Error("Respuesta inválida");
+
+    // Título con el nombre del docente (si viene)
+    if (data.docente?.nombre) {
+      titleEl.textContent = `${data.docente.nombre} — Unidades Didácticas`;
+    }
+
+    const grupos = Array.isArray(data.grupos) ? data.grupos : [];
+
+    if (!grupos.length) {
+      bodyEl.innerHTML = `
+        <div class="rounded-2xl border border-brand-gray/40 bg-white p-6 text-center text-brand-navy/80">
+          Este docente aún no tiene unidades didácticas registradas.
+        </div>`;
+      window.lucide && lucide.createIcons();
+      return;
+    }
+
+    const html = grupos.map(g => {
+      const semestres = (g.semestres || []).map(s => {
+        const cursos = (s.cursos || []);
+        const rows = cursos.map(c => `
+          <tr class="border-t">
+            <td class="py-3 pr-6">
+              <div class="flex items-center gap-2">
+                <i data-lucide="book-open" class="h-4 w-4 text-brand-blue"></i>
+                <span class="font-medium text-brand-navy">${c.nombre}</span>
+              </div>
+            </td>
+            <td class="py-3 pr-4 text-brand-navy/80">${c.horas ?? 0}</td>
+            <td class="py-3 text-brand-navy/80">${c.creditos ?? 0}</td>
+          </tr>
+        `).join("");
+
+        // Si no hay cursos en el semestre
+        const tbody = rows || `
+          <tr class="border-t">
+            <td class="py-3 pr-6 text-brand-navy/60" colspan="3">Sin unidades registradas en este semestre.</td>
+          </tr>`;
+
+        return `
+          <div class="mb-6">
+            <div class="text-brand-blue font-semibold mb-3">${s.semestre}</div>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[520px] border-collapse">
+                <thead>
+                  <tr class="text-left text-sm text-brand-navy/60 uppercase">
+                    <th class="py-2 pr-6">Unidad Didáctica</th>
+                    <th class="py-2 pr-4">Horas</th>
+                    <th class="py-2">Créditos</th>
+                  </tr>
+                </thead>
+                <tbody class="text-brand-navy/90">
+                  ${tbody}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      return `
+        <div class="rounded-3xl border border-brand-gray/40 bg-white overflow-hidden">
+          <div class="bg-brand-blue/10 px-6 py-4 flex items-center">
+            <i data-lucide="folder" class="h-4 w-4 mr-2 text-brand-blue"></i>
+            <h4 class="text-lg font-bold text-brand-navy">${g.modulo}</h4>
+          </div>
+          <div class="p-6">
+            ${semestres}
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    bodyEl.innerHTML = `<div class="space-y-6">${html}</div>`;
+
+    // Si usas el helper de tablas responsive:
+    if (typeof hydrateModalTables === "function") {
+      hydrateModalTables();
+    } else {
+      window.lucide && lucide.createIcons();
+    }
+
+  } catch (e) {
+    bodyEl.innerHTML = `
+      <div class="text-center py-12">
+        <div class="w-24 h-24 mx-auto rounded-full bg-red-100 flex items-center justify-center mb-4">
+          <i data-lucide="alert-triangle" class="h-10 w-10 text-red-600"></i>
+        </div>
+        <h4 class="text-xl font-bold mb-2">No se pudo cargar la información</h4>
+        <p class="text-brand-navy/70">Inténtalo nuevamente en unos minutos.</p>
+      </div>`;
+    window.lucide && lucide.createIcons();
+  }
+}
+window.openUD = openUD;

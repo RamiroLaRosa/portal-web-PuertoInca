@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="/css/web/inversiones.css">
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-[#DDE3E8] to-white text-gray-900 scroll-smooth">
+<body class="min-h-screen bg-gradient-to-br from-[#DDE3E8] to-white text-gray-900 scroll-smooth"
+    style="background-image: linear-gradient(to bottom right, var(--color-neutral), white);">
 
-
-    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8">
+    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8"
+        style="background-color: var(--color-primario-p1);">
         <div class="mb-12">
-            <div class="bg-[#E27227] text-white p-2 rounded-full">
+            <div class="bg-[#E27227] text-white p-2 rounded-full" style="background-color: var(--color-secundario-s1);">
                 <i data-lucide="graduation-cap" class="h-6 w-6"></i>
             </div>
         </div>
@@ -24,25 +25,25 @@
         <nav class="flex flex-col items-center space-y-8 flex-grow" id="sidebar-nav">
             <button onclick="scrollToSection('hero')"
                 class="nav-dot relative w-12 h-12 flex items-center justify-center transition-all hover:bg-[#1A4FD3]/20 rounded-full"
-                data-section="hero" title="Inicio">
+                data-section="hero" title="Inicio" style="/* color base manejado por hover de Tailwind */">
                 <div class="h-3 w-3 rounded-full bg-white"></div>
             </button>
 
             <button onclick="scrollToSection('inversiones')"
                 class="nav-dot relative w-12 h-12 flex items-center justify-center transition-all hover:bg-[#1A4FD3]/20 rounded-full"
-                data-section="inversiones" title="Inversiones y reinversiones">
+                data-section="inversiones" title="Inversiones y reinversiones" style="/* hover via Tailwind */">
                 <div class="h-3 w-3 rounded-full bg-white"></div>
             </button>
 
             <button onclick="scrollToSection('infraestructura')"
                 class="nav-dot relative w-12 h-12 flex items-center justify-center transition-all hover:bg-[#1A4FD3]/20 rounded-full"
-                data-section="infraestructura" title="Obras de infraestructura">
+                data-section="infraestructura" title="Obras de infraestructura" style="/* hover via Tailwind */">
                 <div class="h-3 w-3 rounded-full bg-white"></div>
             </button>
 
             <button onclick="scrollToSection('donaciones')"
                 class="nav-dot relative w-12 h-12 flex items-center justify-center transition-all hover:bg-[#1A4FD3]/20 rounded-full"
-                data-section="donaciones" title="Donaciones y aportes">
+                data-section="donaciones" title="Donaciones y aportes" style="/* hover via Tailwind */">
                 <div class="h-3 w-3 rounded-full bg-white"></div>
             </button>
         </nav>
@@ -66,7 +67,8 @@
 
     <main class="md:pl-20">
         {{-- HERO --}}
-        <section id="hero" class="py-20 bg-gradient-to-br from-[#00264B] via-[#1A4FD3] to-[#4A84F7] text-white">
+        <section id="hero" class="py-20 bg-gradient-to-br from-[#00264B] via-[#1A4FD3] to-[#4A84F7] text-white"
+            style="background-image: linear-gradient(to bottom right, var(--color-primario-p1), var(--color-primario-p2), var(--color-primario-p3));">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto text-center">
                     <h1 class="text-5xl md:text-7xl font-black mb-6">Inversiones y Recursos</h1>
@@ -81,11 +83,15 @@
         <section id="inversiones" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="mb-12 flex items-center gap-4">
-                    <div class="bg-[#4A84F7]/20 p-3 rounded-xl">
-                        <i data-lucide="trending-up" class="h-8 w-8 text-[#1A4FD3]"></i>
+                    <div class="bg-[#4A84F7]/20 p-3 rounded-xl"
+                        style="background-color: color-mix(in srgb, var(--color-primario-p3) 20%, transparent);">
+                        <i data-lucide="trending-up" class="h-8 w-8 text-[#1A4FD3]"
+                            style="color: var(--color-primario-p2);"></i>
                     </div>
                     <div>
-                        <h2 class="text-4xl font-black text-[#00264B]">Inversiones y Reinversiones</h2>
+                        <h2 class="text-4xl font-black text-[#00264B]" style="color: var(--color-primario-p1);">
+                            Inversiones y Reinversiones
+                        </h2>
                     </div>
                 </div>
 
@@ -103,7 +109,10 @@
                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-bold text-[#00264B] mb-3">{{ $inv->nombre }}</h3>
+                                    <h3 class="text-xl font-bold text-[#00264B] mb-3"
+                                        style="color: var(--color-primario-p1);">
+                                        {{ $inv->nombre }}
+                                    </h3>
                                     <p class="text-gray-600 text-justify">{{ $inv->descripcion }}</p>
                                 </div>
                             </a>
@@ -114,14 +123,18 @@
         </section>
 
         {{-- SECCIÓN 2: Obras de Infraestructura (tipo 2) --}}
-        <section id="infraestructura" class="py-20 bg-[#DDE3E8]">
+        <section id="infraestructura" class="py-20 bg-[#DDE3E8]" style="background-color: var(--color-neutral);">
             <div class="container mx-auto px-4">
                 <div class="mb-12 flex items-center gap-4">
-                    <div class="bg-[#1A4FD3]/10 p-3 rounded-xl">
-                        <i data-lucide="building-2" class="h-8 w-8 text-[#1A4FD3]"></i>
+                    <div class="bg-[#1A4FD3]/10 p-3 rounded-xl"
+                        style="background-color: color-mix(in srgb, var(--color-primario-p2) 10%, transparent);">
+                        <i data-lucide="building-2" class="h-8 w-8 text-[#1A4FD3]"
+                            style="color: var(--color-primario-p2);"></i>
                     </div>
                     <div>
-                        <h2 class="text-4xl font-black text-[#00264B]">Obras de Infraestructura</h2>
+                        <h2 class="text-4xl font-black text-[#00264B]" style="color: var(--color-primario-p1);">
+                            Obras de Infraestructura
+                        </h2>
                     </div>
                 </div>
 
@@ -139,7 +152,10 @@
                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-bold text-[#00264B] mb-3">{{ $inv->nombre }}</h3>
+                                    <h3 class="text-xl font-bold text-[#00264B] mb-3"
+                                        style="color: var(--color-primario-p1);">
+                                        {{ $inv->nombre }}
+                                    </h3>
                                     <p class="text-gray-700 text-justify">{{ $inv->descripcion }}</p>
                                 </div>
                             </a>
@@ -153,11 +169,15 @@
         <section id="donaciones" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="mb-12 flex items-center gap-4">
-                    <div class="bg-[#E27227]/10 p-3 rounded-xl">
-                        <i data-lucide="heart" class="h-8 w-8 text-[#E27227]"></i>
+                    <div class="bg-[#E27227]/10 p-3 rounded-xl"
+                        style="background-color: color-mix(in srgb, var(--color-secundario-s1) 10%, transparent);">
+                        <i data-lucide="heart" class="h-8 w-8 text-[#E27227]"
+                            style="color: var(--color-secundario-s1);"></i>
                     </div>
                     <div>
-                        <h2 class="text-4xl font-black text-[#00264B]">Donaciones y Aportes</h2>
+                        <h2 class="text-4xl font-black text-[#00264B]" style="color: var(--color-primario-p1);">
+                            Donaciones y Aportes
+                        </h2>
                     </div>
                 </div>
 
@@ -175,7 +195,10 @@
                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-bold text-[#00264B] mb-3">{{ $inv->nombre }}</h3>
+                                    <h3 class="text-xl font-bold text-[#00264B] mb-3"
+                                        style="color: var(--color-primario-p1);">
+                                        {{ $inv->nombre }}
+                                    </h3>
                                     <p class="text-gray-600 text-justify">{{ $inv->descripcion }}</p>
                                 </div>
                             </a>

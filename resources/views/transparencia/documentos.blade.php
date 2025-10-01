@@ -17,18 +17,21 @@
 </head>
 
 <body
-    class="min-h-screen bg-gradient-to-br from-[#DDE3E8] to-white text-[#212529] font-sans scroll-smooth overflow-x-hidden">
+    class="min-h-screen bg-gradient-to-br from-[#DDE3E8] to-white text-[#212529] font-sans scroll-smooth overflow-x-hidden"
+    style="background-image: linear-gradient(to bottom right, var(--color-neutral), white); color:#212529;">
     <!-- Sidebar minimal -->
-    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8">
+    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8"
+        style="background-color: var(--color-primario-p1); color:#fff;">
         <div class="mb-12">
-            <div class="bg-[#E27227] text-white p-2 rounded-full">
+            <div class="bg-[#E27227] text-white p-2 rounded-full"
+                style="background-color: var(--color-secundario-s1); color:#fff;">
                 <i data-lucide="graduation-cap" class="h-6 w-6"></i>
             </div>
         </div>
         <nav class="flex flex-col items-center space-y-8 flex-grow" id="sidebar-nav">
             <button onclick="scrollToSection('lista')"
                 class="nav-dot relative w-12 h-12 flex items-center justify-center transition-all hover:bg-[#1A4FD3]/20 rounded-full"
-                title="Documentos">
+                title="Documentos" style="background-color: transparent;">
                 <div class="h-3 w-3 rounded-full bg-white"></div>
             </button>
         </nav>
@@ -38,7 +41,8 @@
 
     <main class="md:pl-20">
         <!-- HERO -->
-        <section id="hero" class="py-20 bg-gradient-to-br from-[#00264B] via-[#1A4FD3] to-[#4A84F7] text-white">
+        <section id="hero" class="py-20 bg-gradient-to-br from-[#00264B] via-[#1A4FD3] to-[#4A84F7] text-white"
+            style="background-image: linear-gradient(to bottom right, var(--color-primario-p1), var(--color-primario-p2), var(--color-primario-p3)); color:#fff;">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
@@ -57,8 +61,9 @@
             <div class="container mx-auto px-4">
                 <div class="mb-8">
                     <div class="flex items-center gap-4 mb-4">
-                        <div class="bg-[#DDE3E8] p-3 rounded-xl">
-                            <i data-lucide="building" class="h-8 w-8 text-[#1A4FD3]"></i>
+                        <div class="bg-[#DDE3E8] p-3 rounded-xl" style="background-color: var(--color-neutral);">
+                            <i data-lucide="building" class="h-8 w-8 text-[#1A4FD3]"
+                                style="color: var(--color-primario-p2);"></i>
                         </div>
                         <h2 class="text-4xl font-black">Documentos Institucionales</h2>
                     </div>
@@ -70,13 +75,17 @@
                             <div class="relative flex-1 min-w-0">
                                 <input type="text" name="q" value="{{ $q ?? '' }}"
                                     placeholder="Buscar documento por nombre o descripción…"
-                                    class="w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent">
+                                    class="w-full rounded-xl border border-gray-300 bg-white/90 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-[#1A4FD3] focus:border-transparent"
+                                    style="--tw-ring-color: var(--color-primario-p2);">
                                 <i data-lucide="search"
                                     class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400"></i>
                             </div>
 
                             <button
-                                class="rounded-xl bg-[#1A4FD3] hover:bg-[#00264B] text-white px-5 py-3 font-medium transition-colors">
+                                class="rounded-xl bg-[#1A4FD3] hover:bg-[#00264B] text-white px-5 py-3 font-medium transition-colors"
+                                style="background-color: var(--color-primario-p2);"
+                                onmouseover="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p1')"
+                                onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p2')">
                                 Buscar
                             </button>
 
@@ -111,15 +120,20 @@
                 @else
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach ($documentos as $doc)
-                            <div
-                                class="document-card bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#1A4FD3]">
+                            <div class="document-card bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#1A4FD3]"
+                                style="border-color: #e5e7eb;"
+                                onmouseover="this.style.borderColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p2')"
+                                onmouseout="this.style.borderColor='#e5e7eb'">
                                 <h3 class="text-xl font-bold mb-2 break-words">{{ $doc->nombre }}</h3>
                                 <p class="text-gray-600 text-sm mb-5 text-justify break-words">{{ $doc->descripcion }}
                                 </p>
 
                                 {{-- Abre en pestaña nueva usando la ruta al stream --}}
                                 <a href="{{ route('web.documentos.file', $doc) }}" target="_blank" rel="noopener"
-                                    class="w-full bg-[#1A4FD3] hover:bg-[#00264B] text-white py-3 rounded-xl font-medium transition-colors flex items-center justify-center gap-2">
+                                    class="w-full bg-[#1A4FD3] hover:bg-[#00264B] text-white py-3 rounded-xl font-medium transition-colors flex items-center justify-center gap-2"
+                                    style="background-color: var(--color-primario-p2);"
+                                    onmouseover="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p1')"
+                                    onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primario-p2')">
                                     <i data-lucide="eye" class="h-4 w-4"></i> Ver PDF
                                 </a>
                             </div>

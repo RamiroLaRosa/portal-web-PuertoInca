@@ -83,6 +83,10 @@ use App\Http\Controllers\AdministradoresController;
 use App\Http\Controllers\ProgramasMallaController;
 use App\Http\Controllers\home\DashboardController;
 use App\Http\Controllers\PermisosController;
+use App\Http\Controllers\LogoController;
+use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\SubmoduloController;
+use App\Http\Controllers\home\AdministrarColor;
 
 // Página principal
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -108,7 +112,8 @@ Route::middleware(['auth.user'])->group(function () {
     // DASHBOARD
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
-
+    // GESTION DE COLORES ADMINISTRABLES
+    Route::post('/admin/dashboard/colors', [AdministrarColor::class, 'guardarcolor'])->name('admin.colors.save');
 
     // MODULO ADMINISTRADOR: SEGURIDAD
     Route::middleware(['module:seguridad'])->group(function () {
@@ -122,6 +127,20 @@ Route::middleware(['auth.user'])->group(function () {
         Route::get('/admin/seguridad/permisos',  [PermisosController::class, 'index'])->name('permisos.index');
         Route::put('/admin/seguridad/permisos/{id}', [PermisosController::class, 'update'])->name('permisos.update');
 
+        //Seguridad - Modulos Header
+        Route::prefix('admin/inicio')->middleware(['auth'])->group(function () {
+            Route::get('/header', [HeaderController::class, 'index'])->name('admin.header.index');
+            Route::get('/header/{header}', [HeaderController::class, 'show'])->name('admin.header.show');
+            Route::put('/header/{header}/visibility', [HeaderController::class, 'updateVisibility'])->name('admin.header.visibility');
+        });
+
+        //Seguridad - Submodulos Header
+        Route::prefix('admin/inicio')->middleware(['auth'])->group(function () {
+            Route::get('/submodulos', [SubmoduloController::class, 'index'])->name('admin.submodulos.index');
+            Route::get('/submodulos/{submodulo}', [SubmoduloController::class, 'show'])->name('admin.submodulos.show');
+            Route::put('/submodulos/{submodulo}/visibility', [SubmoduloController::class, 'updateVisibility'])->name('admin.submodulos.visibility');
+        });
+
         // Seguridad - Usuarios (Administradores))
         Route::get('/admin/seguridad/administradores',  [AdministradoresController::class, 'index'])->name('administradores.index');
         Route::post('/admin/seguridad/administradores', [AdministradoresController::class, 'store'])->name('administradores.store');
@@ -133,6 +152,15 @@ Route::middleware(['auth.user'])->group(function () {
 
     // MODULO ADMINISTRADOR: INICIO
     Route::middleware(['module:inicio'])->group(function () {
+
+        //Inicio - Logo
+        Route::prefix('admin/inicio')->middleware(['auth']) // quita 'auth' si no aplica
+            ->group(function () {
+                Route::get('hero-image', [LogoController::class, 'index'])->name('admin.inicio.logo.index');
+                Route::post('hero-image', [LogoController::class, 'store'])->name('admin.inicio.logo.store');
+                Route::put('hero-image/{logo}', [LogoController::class, 'update'])->name('admin.inicio.logo.update');
+            });
+
 
         //Inicio - Hero
         Route::get('/admin/inicio/hero',        [InicioHeroController::class, 'index'])->name('hero.index');
@@ -264,8 +292,12 @@ Route::middleware(['auth.user'])->group(function () {
 
 
         //Locales
-        Route::get('/admin/nosotros/locales', [LocalController::class, 'index'])->name('local.index');
-        Route::put('/admin/nosotros/locales/{local}', [LocalController::class, 'update'])->name('local.update');
+        Route::prefix('admin/nosotros/locales')->group(function () {
+            Route::get('/', [LocalController::class, 'index'])->name('local.index');
+            Route::post('/', [LocalController::class, 'store'])->name('local.store');
+            Route::put('/{local}', [LocalController::class, 'update'])->name('local.update');
+            Route::delete('/{local}', [LocalController::class, 'destroy'])->name('local.destroy');
+        });
     });
 
 
@@ -608,7 +640,7 @@ Route::middleware(['auth.user'])->group(function () {
         Route::put('/admin/libro-reclamaciones/reclamos/{reclamo}/respuesta', [ReclamosController::class, 'updateRespuesta'])->name('reclamos.respuesta.update');
         Route::delete('/admin/libro-reclamaciones/reclamos/{reclamo}/respuesta', [ReclamosController::class, 'destroyRespuesta'])->name('reclamos.respuesta.destroy');
 
-        // Ver documento inline 
+        // Ver documento inline
         Route::get('/admin/libro-reclamaciones/reclamos/{reclamo}/respuesta/ver', [ReclamosController::class, 'verRespuesta'])->name('reclamos.respuesta.view');
 
 
@@ -799,7 +831,7 @@ Route::get('/galeria', [GaleriaController::class, 'index'])->name('galeria.index
 Route::get('/libro_reclamaciones', [LibroReclamacionesController::class, 'index'])->name('libro.index');
 Route::post('/libro_reclamaciones', [LibroReclamacionesController::class, 'store'])->name('libro.store');
 Route::get('/libro_reclamaciones/buscar', [LibroReclamacionesController::class, 'search'])->name('libro.search');
-Route::get('/libro_reclamaciones/{reclamo}/respuesta/ver',[LibroReclamacionesController::class, 'verDocumento'])->name('libro.respuesta.ver');
+Route::get('/libro_reclamaciones/{reclamo}/respuesta/ver', [LibroReclamacionesController::class, 'verDocumento'])->name('libro.respuesta.ver');
 
 
 // Lectura de Noticias

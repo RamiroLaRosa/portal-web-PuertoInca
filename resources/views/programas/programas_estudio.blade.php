@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ingeniería de Sistemas - Silfer Academia</title>
-
+    @vite('resources/css/css_colores_administrables/css_colores_administrables.css')
+    <!-- Variables administrables -->
+    <link rel="stylesheet" href="{{ asset('css/css_colores_administrables/css_colores_administrables.css') }}">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,11 +16,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#00264B',
-                            blue: '#1A4FD3',
-                            sky: '#4A84F7',
-                            orange: '#E27227',
-                            gray: '#F3F6F9',
+                            navy: "var(--color-primario-p1)",
+                            blue: "var(--color-primario-p2)",
+                            sky: "var(--color-primario-p3)",
+                            orange: "var(--color-secundario-s1)",
+                            gray: "var(--color-neutral)",
                         }
                     }
                 }
@@ -32,13 +34,16 @@
     <link rel="stylesheet" href="/css/web/programas.css">
 </head>
 
-<body class="min-h-screen bg-brand-gray text-brand-navy font-sans scroll-smooth">
+<body class="min-h-screen bg-brand-gray text-brand-navy font-sans scroll-smooth"
+    style="background-color: var(--color-neutral); color: var(--color-primario-p1);">
     <!-- Sidebar de navegación (estático) -->
     <aside
-        class="fixed top-0 left-0 h-full w-20 bg-brand-navy text-white z-50 hidden md:flex flex-col items-center py-8">
+        class="fixed top-0 left-0 h-full w-20 bg-brand-navy text-white z-50 hidden md:flex flex-col items-center py-8"
+        style="background-color: var(--color-primario-p1); color:#fff;">
         <div class="mb-12">
             <a href="#">
-                <div class="bg-brand-orange text-white p-2 rounded-full">
+                <div class="bg-brand-orange text-white p-2 rounded-full"
+                    style="background-color: var(--color-secundario-s1); color:#fff;">
                     <i data-lucide="graduation-cap" class="h-6 w-6"></i>
                 </div>
             </a>
@@ -47,7 +52,7 @@
         <nav class="flex flex-col items-center space-y-8 flex-grow" id="sidebar-nav">
             <button onclick="scrollToSection('hero')"
                 class="nav-dot w-12 h-12 flex items-center justify-center rounded-full transition-all hover:bg-brand-blue/70 hover:scale-110"
-                data-section="hero" title="Inicio">
+                data-section="hero" title="Inicio" style="/* hover usando tailwind; punto interno blanco sin cambio */">
                 <div class="h-3 w-3 rounded-full bg-white"></div>
             </button>
             <button onclick="scrollToSection('informacion')"
@@ -101,7 +106,9 @@
         <section id="hero" class="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="{{ $programa->imagen_url }}" alt="{{ $programa->nombre }}" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-brand-blue/60"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-brand-blue/60"
+                    style="background-image: linear-gradient(to right, rgba(0,38,75,0.90), rgba(26,79,211,0.60));">
+                </div>
             </div>
 
             <div class="container mx-auto px-4 md:px-12 z-10 relative">
@@ -112,7 +119,8 @@
                 @endphp
                 <div class="max-w-4xl py-16 md:py-0">
                     <h1 class="text-5xl md:text-7xl font-bold leading-tight text-white mb-6">
-                        {{ $first }} <span class="text-brand-orange">{{ $last }}</span>
+                        {{ $first }} <span class="text-brand-orange"
+                            style="color: var(--color-secundario-s1);">{{ $last }}</span>
                     </h1>
                     <p class="text-xl text-white/90 max-w-2xl">{{ $programa->descripcion }}</p>
                 </div>
@@ -131,40 +139,52 @@
                 <div class="max-w-7xl mx-auto">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-                        <div
-                            class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center">
-                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6">
-                                <i data-lucide="clock" class="h-8 w-8 text-brand-blue"></i>
+                        <div class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center"
+                            style="background-color: var(--color-neutral);">
+                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6"
+                                style="background-color: rgba(26,79,211,0.10);">
+                                <i data-lucide="clock" class="h-8 w-8 text-brand-blue"
+                                    style="color: var(--color-primario-p2);"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-3">Duración</h3>
-                            <p class="text-brand-navy/70">{{ $info->duracion ?? '—' }}</p>
+                            <p class="text-brand-navy/70" style="color: rgba(0,38,75,0.70);">
+                                {{ $info->duracion ?? '—' }}</p>
                         </div>
 
-                        <div
-                            class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center">
-                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6">
-                                <i data-lucide="book-open" class="h-8 w-8 text-brand-blue"></i>
+                        <div class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center"
+                            style="background-color: var(--color-neutral);">
+                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6"
+                                style="background-color: rgba(26,79,211,0.10);">
+                                <i data-lucide="book-open" class="h-8 w-8 text-brand-blue"
+                                    style="color: var(--color-primario-p2);"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-3">Modalidad</h3>
-                            <p class="text-brand-navy/70">{{ $info->modalidad ?? '—' }}</p>
+                            <p class="text-brand-navy/70" style="color: rgba(0,38,75,0.70);">
+                                {{ $info->modalidad ?? '—' }}</p>
                         </div>
 
-                        <div
-                            class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center">
-                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6">
-                                <i data-lucide="calendar" class="h-8 w-8 text-brand-blue"></i>
+                        <div class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center"
+                            style="background-color: var(--color-neutral);">
+                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6"
+                                style="background-color: rgba(26,79,211,0.10);">
+                                <i data-lucide="calendar" class="h-8 w-8 text-brand-blue"
+                                    style="color: var(--color-primario-p2);"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-3">Turno</h3>
-                            <p class="text-brand-navy/70">{{ $info->turno ?? '—' }}</p>
+                            <p class="text-brand-navy/70" style="color: rgba(0,38,75,0.70);">{{ $info->turno ?? '—' }}
+                            </p>
                         </div>
 
-                        <div
-                            class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center">
-                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6">
-                                <i data-lucide="users" class="h-8 w-8 text-brand-blue"></i>
+                        <div class="bg-brand-gray rounded-3xl p-8 hover-raise h-full flex flex-col items-center text-center"
+                            style="background-color: var(--color-neutral);">
+                            <div class="bg-brand-blue/10 p-4 rounded-2xl w-fit mb-6"
+                                style="background-color: rgba(26,79,211,0.10);">
+                                <i data-lucide="users" class="h-8 w-8 text-brand-blue"
+                                    style="color: var(--color-primario-p2);"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-3">Horario</h3>
-                            <p class="text-brand-navy/70">{{ $info->horario ?? '—' }}</p>
+                            <p class="text-brand-navy/70" style="color: rgba(0,38,75,0.70);">
+                                {{ $info->horario ?? '—' }}</p>
                         </div>
 
                     </div>
@@ -173,7 +193,7 @@
         </section>
 
         <!-- COORDINADOR ACADÉMICO -->
-        <section id="coordinador" class="py-20 bg-brand-gray">
+        <section id="coordinador" class="py-20 bg-brand-gray" style="background-color: var(--color-neutral);">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="mb-12">
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">Coordinador Académico</h2>
@@ -196,7 +216,8 @@
                                         </div>
                                         <div>
                                             <h3 class="text-3xl font-bold mb-2">{{ $c->nombre_completo }}</h3>
-                                            <p class="text-xl font-medium text-brand-blue">{{ $c->cargo }}</p>
+                                            <p class="text-xl font-medium text-brand-blue"
+                                                style="color: var(--color-primario-p2);">{{ $c->cargo }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -206,7 +227,8 @@
                             <div class="hover-raise">
                                 <div class="bg-white rounded-3xl p-8 shadow-lg">
                                     <div class="mb-6">
-                                        <svg class="h-10 w-10 text-brand-blue mb-4" fill="currentColor"
+                                        <svg class="h-10 w-10 text-brand-blue mb-4"
+                                            style="color: var(--color-primario-p2);" fill="currentColor"
                                             viewBox="0 0 24 24">
                                             <path
                                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z">
@@ -214,7 +236,8 @@
                                         </svg>
                                         <h3 class="text-2xl font-bold mb-4">Mensaje del Coordinador</h3>
                                     </div>
-                                    <p class="text-brand-navy/80 text-lg leading-relaxed text-justify">
+                                    <p class="text-brand-navy/80 text-lg leading-relaxed text-justify"
+                                        style="color: rgba(0,38,75,0.80);">
                                         {{ $c->palabras }}
                                     </p>
                                 </div>
@@ -224,7 +247,8 @@
                             <div class="hover-raise">
                                 <div class="bg-white rounded-3xl p-8 shadow-lg">
                                     <div class="mb-6">
-                                        <svg class="h-10 w-10 text-brand-blue mb-4" fill="currentColor"
+                                        <svg class="h-10 w-10 text-brand-blue mb-4"
+                                            style="color: var(--color-primario-p2);" fill="currentColor"
                                             viewBox="0 0 24 24">
                                             <path
                                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z">
@@ -232,7 +256,8 @@
                                         </svg>
                                         <h3 class="text-2xl font-bold mb-4">Mensaje del Coordinador</h3>
                                     </div>
-                                    <p class="text-brand-navy/80 text-lg leading-relaxed text-justify">
+                                    <p class="text-brand-navy/80 text-lg leading-relaxed text-justify"
+                                        style="color: rgba(0,38,75,0.80);">
                                         {{ $c->palabras }}
                                     </p>
                                 </div>
@@ -250,7 +275,8 @@
                                         </div>
                                         <div>
                                             <h3 class="text-3xl font-bold mb-2">{{ $c->nombre_completo }}</h3>
-                                            <p class="text-xl font-medium text-brand-blue">{{ $c->cargo }}</p>
+                                            <p class="text-xl font-medium text-brand-blue"
+                                                style="color: var(--color-primario-p2);">{{ $c->cargo }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +284,8 @@
                         @endif
                     </div>
                 @empty
-                    <div class="bg-white rounded-3xl p-8 shadow text-brand-navy/70">
+                    <div class="bg-white rounded-3xl p-8 shadow text-brand-navy/70"
+                        style="color: rgba(0,38,75,0.70);">
                         Próximamente publicaremos la coordinación académica de este programa.
                     </div>
                 @endforelse
@@ -273,23 +300,25 @@
                 </div>
 
                 <div class="mb-16">
-                    <div
-                        class="relative bg-gradient-to-br from-brand-sky/10 to-brand-orange/10 rounded-3xl p-12 overflow-hidden hover-raise">
+                    <div class="relative bg-gradient-to-br from-brand-sky/10 to-brand-orange/10 rounded-3xl p-12 overflow-hidden hover-raise"
+                        style="background-image: linear-gradient(to bottom right, rgba(74,132,247,0.10), rgba(226,114,39,0.10));">
                         {{-- adornos … --}}
 
                         <div class="relative z-10 text-center max-w-4xl mx-auto">
-                            <div class="bg-brand-orange text-white p-4 rounded-2xl w-fit mx-auto mb-6">
+                            <div class="bg-brand-orange text-white p-4 rounded-2xl w-fit mx-auto mb-6"
+                                style="background-color: var(--color-secundario-s1); color:#fff;">
                                 <i data-lucide="graduation-cap" class="h-12 w-12"></i>
                             </div>
 
                             @php $perfil = optional($programa->perfil)->descripcion; @endphp
 
                             @if ($perfil)
-                                <p class="text-lg text-brand-navy/80 leading-relaxed text-justify">
+                                <p class="text-lg text-brand-navy/80 leading-relaxed text-justify"
+                                    style="color: rgba(0,38,75,0.80);">
                                     {!! nl2br(e($perfil)) !!}
                                 </p>
                             @else
-                                <p class="text-lg text-brand-navy/60 italic">
+                                <p class="text-lg text-brand-navy/60 italic" style="color: rgba(0,38,75,0.60);">
                                     Próximamente publicaremos el perfil de egreso de este programa.
                                 </p>
                             @endif
@@ -300,7 +329,8 @@
         </section>
 
         <!-- ÁREAS DE ESPECIALIZACIÓN -->
-        <section id="especializaciones" class="py-20 bg-brand-navy text-white">
+        <section id="especializaciones" class="py-20 bg-brand-navy text-white"
+            style="background-color: var(--color-primario-p1); color:#fff;">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="mb-12">
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">Áreas de Especialización</h2>
@@ -314,8 +344,8 @@
                                 <div class="h-48 overflow-hidden relative">
                                     <img src="{{ $area->imagen_url }}" alt="{{ $area->nombre }}"
                                         class="w-full h-full object-cover img-zoom">
-                                    <div
-                                        class="fade-overlay absolute inset-0 bg-gradient-to-t from-brand-navy/50 to-transparent">
+                                    <div class="fade-overlay absolute inset-0 bg-gradient-to-t from-brand-navy/50 to-transparent"
+                                        style="background-image: linear-gradient(to top, rgba(0,38,75,0.50), transparent);">
                                     </div>
                                 </div>
                                 <div class="p-8">
@@ -347,7 +377,8 @@
                 @endphp
 
                 @if ($egresados->isEmpty())
-                    <div class="bg-brand-gray rounded-3xl p-8 text-center text-brand-navy/70">
+                    <div class="bg-brand-gray rounded-3xl p-8 text-center text-brand-navy/70"
+                        style="background-color: var(--color-neutral); color: rgba(0,38,75,0.70);">
                         Aún no hay egresados destacados publicados para este programa.
                     </div>
                 @else
@@ -357,13 +388,14 @@
                                 <div class="relative h-64 overflow-hidden">
                                     <img src="{{ $e->imagen_url }}" alt="{{ $e->nombre }}"
                                         class="w-full h-full object-cover img-zoom">
-                                    <div
-                                        class="fade-overlay absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent">
+                                    <div class="fade-overlay absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent"
+                                        style="background-image: linear-gradient(to top, rgba(0,38,75,0.60), transparent);">
                                     </div>
                                 </div>
                                 <div class="p-8 text-center">
                                     <h3 class="text-2xl font-bold mb-2">{{ $e->nombre }}</h3>
-                                    <p class="text-lg text-brand-navy/80">{{ $e->cargo }}</p>
+                                    <p class="text-lg text-brand-navy/80" style="color: rgba(0,38,75,0.80);">
+                                        {{ $e->cargo }}</p>
                                 </div>
                             </div>
                         @endforeach
@@ -373,8 +405,7 @@
         </section>
 
         <!-- MALLA CURRICULAR -->
-        <!-- MALLA CURRICULAR -->
-        <section id="malla" class="py-20 bg-brand-gray">
+        <section id="malla" class="py-20 bg-brand-gray" style="background-color: var(--color-neutral);">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="mb-12">
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">Malla Curricular</h2>
@@ -392,7 +423,8 @@
 
                 @if ($semestres->isEmpty())
                     <div class="bg-white rounded-3xl p-8 shadow-lg">
-                        <p class="text-brand-navy/70">La malla curricular de este programa será publicada próximamente.
+                        <p class="text-brand-navy/70" style="color: rgba(0,38,75,0.70);">
+                            La malla curricular de este programa será publicada próximamente.
                         </p>
                     </div>
                 @else
@@ -412,11 +444,13 @@
                                     @if ($cursos->isNotEmpty())
                                         <div class="flex items-center gap-2">
                                             <span
-                                                class="px-3 py-1 rounded-full bg-brand-sky/10 text-brand-blue text-xs font-semibold">
+                                                class="px-3 py-1 rounded-full bg-brand-sky/10 text-brand-blue text-xs font-semibold"
+                                                style="color: var(--color-primario-p2);">
                                                 {{ $totalCreditos }} cr
                                             </span>
                                             <span
-                                                class="px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-semibold">
+                                                class="px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-semibold"
+                                                style="color: var(--color-secundario-s1);">
                                                 {{ $totalHoras }} h
                                             </span>
                                         </div>
@@ -428,9 +462,10 @@
                                         @foreach ($cursos as $curso)
                                             <li class="flex items-start justify-between gap-3">
                                                 <div class="flex items-start">
-                                                    <span
-                                                        class="w-2 h-2 bg-brand-orange rounded-full mt-2 mr-3"></span>
-                                                    <span class="text-brand-navy/90">
+                                                    <span class="w-2 h-2 bg-brand-orange rounded-full mt-2 mr-3"
+                                                        style="background-color: var(--color-secundario-s1);"></span>
+                                                    <span class="text-brand-navy/90"
+                                                        style="color: rgba(0,38,75,0.90);">
                                                         {{ $curso->nombre }}
                                                     </span>
                                                 </div>
@@ -438,11 +473,13 @@
                                                 {{-- Créditos y horas por curso --}}
                                                 <div class="shrink-0 flex items-center gap-2">
                                                     <span
-                                                        class="px-2 py-1 rounded-full bg-brand-sky/10 text-brand-blue text-[11px] font-semibold">
+                                                        class="px-2 py-1 rounded-full bg-brand-sky/10 text-brand-blue text-[11px] font-semibold"
+                                                        style="color: var(--color-primario-p2);">
                                                         {{ (int) ($curso->creditos ?? 0) }} cr
                                                     </span>
                                                     <span
-                                                        class="px-2 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-[11px] font-semibold">
+                                                        class="px-2 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-[11px] font-semibold"
+                                                        style="color: var(--color-secundario-s1);">
                                                         {{ (int) ($curso->horas ?? 0) }} h
                                                     </span>
                                                 </div>
@@ -450,7 +487,7 @@
                                         @endforeach
                                     </ul>
                                 @else
-                                    <p class="text-brand-navy/70 italic">
+                                    <p class="text-brand-navy/70 italic" style="color: rgba(0,38,75,0.70);">
                                         Cursos especializados en este semestre serán publicados próximamente.
                                     </p>
                                 @endif
@@ -461,7 +498,8 @@
 
                 <div class="text-center">
                     <a href="{{ route('programas.malla.pdf', $programa->id) }}"
-                        class="bg-brand-orange hover:bg-[#cf651f] text-white rounded-full px-8 py-4 font-medium inline-flex items-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                        class="bg-brand-orange hover:bg-[#cf651f] text-white rounded-full px-8 py-4 font-medium inline-flex items-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+                        style="background-color: var(--color-secundario-s1); color:#fff;">
                         <i data-lucide="download" class="mr-2 h-5 w-5"></i>
                         Descargar Malla Completa
                     </a>
@@ -480,12 +518,13 @@
                 @php $convenios = $programa->convenios; @endphp
 
                 @if ($convenios->isEmpty())
-                    <p class="text-brand-navy/60">Sin convenios registrados para este programa.</p>
+                    <p class="text-brand-navy/60" style="color: rgba(0,38,75,0.60);">Sin convenios registrados para
+                        este programa.</p>
                 @else
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
                         @foreach ($convenios as $c)
-                            <div
-                                class="bg-brand-gray rounded-2xl p-6 text-center ring-1 ring-brand-blue/10 hover-raise hover:ring-brand-blue/30">
+                            <div class="bg-brand-gray rounded-2xl p-6 text-center ring-1 ring-brand-blue/10 hover-raise hover:ring-brand-blue/30"
+                                style="background-color: var(--color-neutral);">
                                 <div class="bg-white rounded-xl p-4 mb-4 shadow-sm">
                                     <img src="{{ $c->imagen_url }}" alt="{{ $c->entidad }}"
                                         class="h-12 mx-auto object-contain">
@@ -499,7 +538,7 @@
         </section>
 
         <!-- GALERÍA -->
-        <section id="galeria" class="py-20 bg-brand-gray">
+        <section id="galeria" class="py-20 bg-brand-gray" style="background-color: var(--color-neutral);">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="mb-12">
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">Galería</h2>
@@ -508,7 +547,8 @@
                 @php $fotos = $programa->galerias; @endphp
 
                 @if ($fotos->isEmpty())
-                    <div class="bg-white rounded-2xl p-8 shadow text-brand-navy/70">
+                    <div class="bg-white rounded-2xl p-8 shadow text-brand-navy/70"
+                        style="color: rgba(0,38,75,0.70);">
                         Aún no hay fotos publicadas para este programa.
                     </div>
                 @else
@@ -517,8 +557,8 @@
                             <div class="group relative overflow-hidden rounded-3xl shadow-lg hover-raise">
                                 <img src="{{ $g->imagen_url }}" alt="{{ $g->nombre }}"
                                     class="w-full h-64 object-cover img-zoom" loading="lazy">
-                                <div
-                                    class="fade-overlay absolute inset-0 bg-gradient-to-t from-brand-navy/70 to-transparent">
+                                <div class="fade-overlay absolute inset-0 bg-gradient-to-t from-brand-navy/70 to-transparent"
+                                    style="background-image: linear-gradient(to top, rgba(0,38,75,0.70), transparent);">
                                 </div>
                             </div>
                         @endforeach
@@ -526,7 +566,8 @@
 
                     <div class="text-center mt-12">
                         <a href="{{ url('/galeria') }}"
-                            class="bg-brand-orange hover:bg-[#cf651f] text-white rounded-full px-8 py-4 font-medium inline-flex items-center hover-raise">
+                            class="bg-brand-orange hover:bg-[#cf651f] text-white rounded-full px-8 py-4 font-medium inline-flex items-center hover-raise"
+                            style="background-color: var(--color-secundario-s1); color:#fff;">
                             Ver más fotos
                             <i data-lucide="external-link" class="ml-2 h-5 w-5"></i>
                         </a>

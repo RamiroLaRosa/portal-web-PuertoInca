@@ -45,6 +45,8 @@
                                 <ul>
                                     <li><a href="{{ route('roles.index') }}">Roles</a></li>
                                     <li><a href="{{ route('permisos.index') }}">Permisos</a></li>
+                                    <li><a href="{{ route('admin.header.index') }}">Modulos</a></li>
+                                    <li><a href="{{ route('admin.submodulos.index') }}">Submodulos</a></li>
                                     <li><a href="{{ route('administradores.index') }}">Administradores</a></li>
                                 </ul>
                             </li>
@@ -56,6 +58,7 @@
                                     <span class="nav-text">Inicio</span>
                                 </a>
                                 <ul>
+                                    <li><a href="{{ route('admin.inicio.logo.index') }}">Logo Institucional</a></li>
                                     <li><a href="{{ route('hero.index') }}">Hero</a></li>
                                     <li><a href="{{ route('servicios-inicio.index') }}">Servicios</a></li>
                                     <li><a href="{{ route('estadistica-inicio.index') }}">Estadistica</a></li>

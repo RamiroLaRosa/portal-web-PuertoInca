@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\View;
 use App\Models\LinkInstitucional;
 use App\Models\ProgramasEstudio;
 use App\Models\Usuario;
+use App\Models\Color;
+use App\Models\Logo;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -30,6 +34,23 @@ class AppServiceProvider extends ServiceProvider
                 'linksInstitucionales' => $links,
                 'programasMenu'        => $programasMenu,
             ]);
+        });
+
+        View::composer(['header', 'include.header'], function ($view) {
+            $url = Cache::remember('site_logo_url', 3600, function () {
+                $logo = Logo::where('is_active', 1)->latest('id')->first();
+
+                if (!$logo || empty($logo->imagen)) {
+                    return asset('images/Logo_Silfer.png'); // fallback
+                }
+
+                // En BD guardas "images/2025....png"
+                return Str::startsWith($logo->imagen, ['http://', 'https://'])
+                    ? $logo->imagen
+                    : asset(ltrim($logo->imagen, '/')); // => /images/2025...png
+            });
+
+            $view->with('siteLogoUrl', $url);
         });
 
         View::composer('include.sidebar', function ($view) {
@@ -56,5 +77,29 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('datalist', collect());
             }
         });
+
+        View::composer('*', function ($view) {
+            $colores = Color::whereIn('clave', [
+                'color-primario-p1',
+                'color-primario-p2',
+                'color-primario-p3',
+                'color-secundario-s1',
+                'color-neutral'
+            ])->pluck('valor', 'clave')->toArray();
+
+            $defaults = [
+                'color-primario-p1' => '#00264B',
+                'color-primario-p2' => '#1A4FD3',
+                'color-primario-p3' => '#4A84F7',
+                'color-secundario-s1' => '#E27227',
+                'color-neutral' => '#DDE3E8',
+            ];
+
+            $colores = array_merge($defaults, $colores);
+
+            $view->with('colores', $colores);
+        });
+
+
     }
 }

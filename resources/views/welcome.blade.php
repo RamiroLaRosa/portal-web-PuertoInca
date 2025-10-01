@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Silfer Academia - Educación para el futuro</title>
-
+    
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,11 +14,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#00264B',
-                            blue: '#1A4FD3',
-                            sky: '#4A84F7',
-                            orange: '#E27227',
-                            gray: '#DDE3E8',
+                            navy: "var(--color-primario-p1)",
+                            blue: "var(--color-primario-p2)",
+                            sky: "var(--color-primario-p3)",
+                            orange: "var(--color-secundario-s1)",
+                            gray: "var(--color-neutral)",
                         },
                     },
                     container: {
@@ -84,7 +84,6 @@
             opacity: 1;
         }
 
-        /* Tooltips simples basados en [title] */
         button[title] {
             position: relative;
         }
@@ -106,16 +105,67 @@
             transition: opacity .3s;
         }
     </style>
+
+
+    <style>
+        /* Fondo del aside */
+        #sidebar {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* mobile: blanco translúcido */
+        @media (min-width: 768px) {
+            #sidebar {
+                background-color: var(--color-primario-p1);
+            }
+
+            /* desktop: azul primario */
+        }
+    </style>
+
+    <style>
+        /* Punto interior (mobile: P1; desktop: blanco) */
+        #sidebar-nav .nav-dot>span {
+            background-color: var(--color-primario-p1);
+        }
+
+        @media (min-width: 768px) {
+            #sidebar-nav .nav-dot>span {
+                background-color: #ffffff;
+            }
+
+            /* blanco manual */
+        }
+
+        /* Hover del botón (círculo exterior) usando tu P2 */
+        #sidebar-nav .nav-dot {
+            transition: background-color .2s ease;
+        }
+
+        #sidebar-nav .nav-dot:hover {
+            background-color: var(--color-primario-p2);
+        }
+
+        /* Accesibilidad: focus visible con P2 (reemplazo de focus:ring-brand-blue) */
+        #sidebar-nav .nav-dot:focus-visible {
+            outline: 2px solid var(--color-primario-p2);
+            outline-offset: 2px;
+            border-radius: 9999px;
+        }
+    </style>
+
 </head>
 
-<body class="min-h-screen bg-brand-gray text-brand-navy font-sans scroll-smooth">
+<body class="min-h-screen font-sans scroll-smooth"
+    style="background-color: var(--color-neutral); color: var(--color-primario-p1);">
     <!-- Sidebar desktop / Bottom dots mobile -->
-    <aside
-        class="fixed inset-x-0 bottom-0 md:inset-auto md:top-0 md:left-0 md:h-full md:w-20 z-50 flex md:flex-col items-center justify-center md:justify-start bg-white/80 md:bg-brand-navy/100 backdrop-blur md:backdrop-blur-0 border-t md:border-none">
+    <aside id="sidebar"
+        class="fixed inset-x-0 bottom-0 md:inset-auto md:top-0 md:left-0 md:h-full md:w-20 z-50 flex md:flex-col items-center justify-center md:justify-start backdrop-blur md:backdrop-blur-0 border-t md:border-none">
+
         <!-- Logo (desktop only) -->
         <div class="hidden md:block mb-8 mt-8">
             <a href="{{ url('/') }}" class="inline-flex">
-                <div class="bg-brand-orange text-white p-2 rounded-full">
+                <div class="text-white p-2 rounded-full" style="background-color: var(--color-secundario-s1);">
                     <i data-lucide="graduation-cap" class="h-6 w-6"></i>
                 </div>
             </a>
@@ -124,47 +174,56 @@
         <!-- Nav dots -->
         <nav id="sidebar-nav"
             class="w-full md:w-auto flex md:flex-col items-center justify-between md:justify-start gap-2 md:gap-6 px-3 py-2 md:py-0">
+
             <button onclick="scrollToSection('home')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="home" title="Inicio">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
+
             <button onclick="scrollToSection('servicios')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="servicios" title="Servicios">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
+
             <button onclick="scrollToSection('estadisticas')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="estadisticas" title="Estadísticas">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
+
             <button onclick="scrollToSection('programas')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="programas" title="Programas">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
+
             <button onclick="scrollToSection('noticias')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="noticias" title="Noticias">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
+
             <button onclick="scrollToSection('coordinadores')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="coordinadores" title="Coordinadores">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
+
             <button onclick="scrollToSection('porque')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="porque" title="¿Por qué?">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
+
             <button onclick="scrollToSection('testimonios')"
-                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all rounded-full"
                 data-section="testimonios" title="Testimonios">
-                <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                <span class="h-2.5 w-2.5 rounded-full"></span>
             </button>
         </nav>
+
     </aside>
 
     @include('header')
@@ -173,8 +232,13 @@
         <!-- Hero -->
         <section id="home" class="min-h-[80vh] md:min-h-screen flex items-center relative overflow-hidden">
             <div class="absolute inset-0 -z-10">
-                <div class="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-brand-sky/10"></div>
-                <div class="absolute top-10 right-1/4 w-40 h-40 md:w-64 md:h-64 rounded-full bg-brand-orange/20"></div>
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-brand-sky/10"
+                    style="background-image: linear-gradient(to bottom right,
+                        color-mix(in srgb, var(--color-secundario-s1) 10%, transparent),
+                        color-mix(in srgb, var(--color-primario-p3) 10%, transparent));">
+                </div>
+                <div class="absolute top-10 right-1/4 w-40 h-40 md:w-64 md:h-64 rounded-full bg-brand-orange/20"
+                    style="background-color: color-mix(in srgb, var(--color-secundario-s1) 20%, transparent);"></div>
                 <div class="absolute bottom-10 left-1/3 w-56 h-56 md:w-80 md:h-80 rounded-full bg-yellow-500/20"></div>
             </div>
 
@@ -194,7 +258,8 @@
                         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                             {{ $first }}
                             @if ($last !== '')
-                                <span class="text-brand-orange">{{ $last }}</span>
+                                <span class="text-brand-orange"
+                                    style="color: var(--color-secundario-s1);">{{ $last }}</span>
                             @endif
                         </h1>
 
@@ -205,17 +270,21 @@
                         <!-- CTA visible en mobile también -->
                         <div class="flex flex-wrap gap-3 pt-2">
                             <a href="#programas"
-                                class="inline-flex items-center rounded-full bg-brand-orange text-white px-6 py-3 text-sm md:text-base font-medium hover:bg-brand-orange/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange">Explorar
+                                class="inline-flex items-center rounded-full bg-brand-orange text-white px-6 py-3 text-sm md:text-base font-medium hover:bg-brand-orange/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange"
+                                style="background-color: var(--color-secundario-s1);">Explorar
                                 programas<i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i></a>
                             <a href="#servicios"
-                                class="inline-flex items-center rounded-full bg-white text-brand-navy px-6 py-3 text-sm md:text-base font-medium shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue">Nuestros
+                                class="inline-flex items-center rounded-full bg-white text-brand-navy px-6 py-3 text-sm md:text-base font-medium shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
+                                style="color: var(--color-primario-p1);">Nuestros
                                 servicios</a>
                         </div>
                     </div>
 
                     <div class="relative order-first md:order-none">
-                        <div
-                            class="absolute -inset-3 md:-inset-4 bg-gradient-to-br from-brand-orange/20 to-brand-sky/20 rounded-[24px] md:rounded-[30px] blur-md md:blur-lg">
+                        <div class="absolute -inset-3 md:-inset-4 bg-gradient-to-br from-brand-orange/20 to-brand-sky/20 rounded-[24px] md:rounded-[30px] blur-md md:blur-lg"
+                            style="background-image: linear-gradient(to bottom right,
+                                color-mix(in srgb, var(--color-secundario-s1) 20%, transparent),
+                                color-mix(in srgb, var(--color-primario-p3) 20%, transparent));">
                         </div>
                         <div class="relative overflow-hidden rounded-[24px] md:rounded-[30px] shadow-2xl">
                             <img src="{{ asset($hero->foto ?? 'images/no-photo.jpg') }}"
@@ -237,8 +306,10 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
                     @forelse($servicios ?? collect() as $s)
                         <article class="bg-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow">
-                            <div class="mb-5 md:mb-6 bg-brand-orange/15 p-4 rounded-2xl w-fit">
-                                <i class="{{ $s->icono }} text-brand-orange text-2xl md:text-3xl fa-fw"></i>
+                            <div class="mb-5 md:mb-6 bg-brand-orange/15 p-4 rounded-2xl w-fit"
+                                style="background-color: color-mix(in srgb, var(--color-secundario-s1) 15%, transparent);">
+                                <i class="{{ $s->icono }} text-brand-orange text-2xl md:text-3xl fa-fw"
+                                    style="color: var(--color-secundario-s1);"></i>
                             </div>
                             <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">{{ $s->nombre }}</h3>
                             <p class="text-gray-600; text-justify">{{ $s->descripcion }}</p>
@@ -252,7 +323,8 @@
         </section>
 
         <!-- Estadísticas -->
-        <section id="estadisticas" class="py-16 md:py-20 bg-brand-navy text-white">
+        <section id="estadisticas" class="py-16 md:py-20 bg-brand-navy text-white"
+            style="background-color: var(--color-primario-p1);">
             <div class="container">
                 <div class="mb-8 md:mb-12">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2">Estadística</h2>
@@ -261,12 +333,16 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     @foreach ($estadisticas as $item)
                         <div class="relative">
-                            <div
-                                class="absolute -inset-2 bg-gradient-to-br from-brand-orange/20 to-brand-sky/20 rounded-3xl blur-lg">
+                            <div class="absolute -inset-2 bg-gradient-to-br from-brand-orange/20 to-brand-sky/20 rounded-3xl blur-lg"
+                                style="background-image: linear-gradient(to bottom right,
+                                    color-mix(in srgb, var(--color-secundario-s1) 20%, transparent),
+                                    color-mix(in srgb, var(--color-primario-p3) 20%, transparent));">
                             </div>
-                            <div class="relative bg-brand-blue rounded-3xl p-6 md:p-8 h-full">
+                            <div class="relative bg-brand-blue rounded-3xl p-6 md:p-8 h-full"
+                                style="background-color: var(--color-primario-p2);">
                                 <div class="mb-5 md:mb-6 bg-brand-navy/60 p-4 rounded-2xl w-fit">
-                                    <i class="{{ $item->icono }} text-brand-orange text-xl md:text-2xl"></i>
+                                    <i class="{{ $item->icono }} text-brand-orange text-xl md:text-2xl"
+                                        style="color: var(--color-secundario-s1);"></i>
                                 </div>
                                 <div class="text-4xl md:text-5xl lg:text-6xl font-bold animate-count"
                                     data-target="{{ (int) $item->cantidad }}"
@@ -307,7 +383,8 @@
                                 <!-- Added visible "VER EL PROGRAMA" button -->
                                 <div class="mt-4">
                                     <a href="{{ route('programas.show.id', $prog->id) }}"
-                                        class="inline-flex items-center bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-6 py-2.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange">
+                                        class="inline-flex items-center bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-6 py-2.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange"
+                                        style="background-color: var(--color-secundario-s1);">
                                         Ver el programa
                                         <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
                                     </a>
@@ -323,7 +400,7 @@
         </section>
 
         <!-- Noticias -->
-        <section id="noticias" class="py-16 md:py-20 bg-brand-gray">
+        <section id="noticias" class="py-16 md:py-20 bg-brand-gray" style="background-color: var(--color-neutral);">
             <div class="container">
                 <div class="mb-8 md:mb-12">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2">Últimas Noticias</h2>
@@ -386,7 +463,8 @@
 
                 <div class="mt-8 md:mt-12 text-center">
                     <a href="{{ url('/noticias') }}"
-                        class="inline-flex items-center bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-6 md:px-8 py-3 font-medium transition-colors">
+                        class="inline-flex items-center bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-6 md:px-8 py-3 font-medium transition-colors"
+                        style="background-color: var(--color-secundario-s1);">
                         Ver todas las noticias <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
                     </a>
                 </div>
@@ -404,8 +482,8 @@
                     @forelse($coordinadores as $c)
                         <article
                             class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow text-center p-6 md:p-8">
-                            <div
-                                class="h-28 w-28 md:h-32 md:w-32 mx-auto border-4 border-white shadow-lg rounded-full overflow-hidden bg-brand-orange/15 flex items-center justify-center mb-4 md:mb-6">
+                            <div class="h-28 w-28 md:h-32 md:w-32 mx-auto border-4 border-white shadow-lg rounded-full overflow-hidden bg-brand-orange/15 flex items-center justify-center mb-4 md:mb-6"
+                                style="background-color: color-mix(in srgb, var(--color-secundario-s1) 15%, transparent);">
                                 <img src="{{ $c->imagen_url }}" alt="{{ $c->nombre }}"
                                     class="w-full h-full object-cover" />
                             </div>
@@ -424,7 +502,7 @@
         </section>
 
         <!-- Por qué -->
-        <section id="porque" class="py-16 md:py-20 bg-brand-gray">
+        <section id="porque" class="py-16 md:py-20 bg-brand-gray" style="background-color: var(--color-neutral);">
             <div class="container">
                 <div class="mb-8 md:mb-12">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2">¿Por qué estudiar en el IESTP?</h2>
@@ -434,9 +512,10 @@
                     @forelse($beneficios as $b)
                         <article
                             class="bg-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-                            <div
-                                class="bg-brand-orange/15 p-3 md:p-4 rounded-full w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center">
-                                <i class="{{ $b->icono }} text-brand-orange text-2xl md:text-3xl"></i>
+                            <div class="bg-brand-orange/15 p-3 md:p-4 rounded-full w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center"
+                                style="background-color: color-mix(in srgb, var(--color-secundario-s1) 15%, transparent);">
+                                <i class="{{ $b->icono }} text-brand-orange text-2xl md:text-3xl"
+                                    style="color: var(--color-secundario-s1);"></i>
                             </div>
                             <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">{{ $b->nombre }}</h3>
                             <p class="text-gray-600; text-justify">{{ $b->descripcion }}</p>
@@ -486,7 +565,7 @@
                             <div class="mb-4">
                                 <div class="flex justify-center mb-3">
                                     <svg class="h-8 w-8 md:h-10 md:w-10 text-brand-navy" fill="currentColor"
-                                        viewBox="0 0 24 24">
+                                        viewBox="0 0 24 24" style="color: var(--color-primario-p1);">
                                         <path
                                             d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z">
                                         </path>
@@ -498,7 +577,8 @@
                             </div>
 
                             <!-- Centered name at the bottom -->
-                            <h4 class="font-bold text-base md:text-lg text-brand-navy mt-4">{{ $t->nombre }}</h4>
+                            <h4 class="font-bold text-base md:text-lg text-brand-navy mt-4"
+                                style="color: var(--color-primario-p1);">{{ $t->nombre }}</h4>
                         </article>
                     @empty
                         <div class="col-span-full bg-white rounded-3xl p-8 shadow text-center text-gray-500">
@@ -551,7 +631,7 @@
 
         sections.forEach(s => io.observe(s));
 
-        // Contadores animados (solo una vez cuando aparecen)
+        // Contadores animados
         const counters = document.querySelectorAll('.animate-count');
         const seen = new WeakSet();
         const cIo = new IntersectionObserver((entries) => {
@@ -579,8 +659,9 @@
         counters.forEach(c => cIo.observe(c));
     </script>
 
-    <!-- Mantén tu script si existe -->
     <script src="/js/web/main.js" defer></script>
+
+
 </body>
 
 </html>

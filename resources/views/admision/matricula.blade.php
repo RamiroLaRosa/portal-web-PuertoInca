@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrícula - Silfer Academia</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -14,11 +15,14 @@
 </head>
 
 <body
-    class="min-h-screen bg-gradient-to-br from-[#DDE3E8] via-white to-[#4A84F7]/20 text-[#212529] font-sans scroll-smooth">
+    class="min-h-screen bg-gradient-to-br from-[#DDE3E8] via-white to-[#4A84F7]/20 text-[#212529] font-sans scroll-smooth"
+    style="background-image: linear-gradient(to bottom right, var(--color-neutral), white, color-mix(in srgb, var(--color-primario-p3) 20%, transparent));">
+
     <!-- Navegación lateral -->
-    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8">
+    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8"
+        style="background-color: var(--color-primario-p1);">
         <div class="mb-12">
-            <div class="bg-[#E27227] text-white p-2 rounded-full">
+            <div class="bg-[#E27227] text-white p-2 rounded-full" style="background-color: var(--color-secundario-s1);">
                 <i data-lucide="graduation-cap" class="h-6 w-6"></i>
             </div>
         </div>
@@ -61,21 +65,25 @@
     <main class="md:pl-20 pt-16">
         <!-- Hero Section -->
         <section id="hero"
-            class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#DDE3E8] via-white to-[#4A84F7]/30">
+            class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#DDE3E8] via-white to-[#4A84F7]/30"
+            style="background-image: linear-gradient(to bottom right, var(--color-neutral), white, color-mix(in srgb, var(--color-primario-p3) 30%, transparent));">
             <!-- Elementos flotantes decorativos -->
-            <div class="absolute top-20 left-10 w-20 h-20 bg-[#1A4FD3]/20 rounded-full opacity-20 animate-float"></div>
-            <div
-                class="absolute top-40 right-20 w-32 h-32 bg-[#4A84F7]/30 rounded-full opacity-20 animate-float-delayed">
-            </div>
-            <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-[#E27227]/20 rounded-full opacity-20 animate-float">
-            </div>
+            <div class="absolute top-20 left-10 w-20 h-20 bg-[#1A4FD3]/20 rounded-full opacity-20 animate-float"
+                style="background-color: color-mix(in srgb, var(--color-primario-p2) 20%, transparent);"></div>
+            <div class="absolute top-40 right-20 w-32 h-32 bg-[#4A84F7]/30 rounded-full opacity-20 animate-float-delayed"
+                style="background-color: color-mix(in srgb, var(--color-primario-p3) 30%, transparent);"></div>
+            <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-[#E27227]/20 rounded-full opacity-20 animate-float"
+                style="background-color: color-mix(in srgb, var(--color-secundario-s1) 20%, transparent);"></div>
 
             <div class="container mx-auto px-4 md:px-12 z-10 relative">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h1 class="text-5xl md:text-6xl font-black leading-tight mb-6">
                             Tu matrícula en
-                            <span class="gradient-text">3 simples pasos</span>
+                            <span class="gradient-text"
+                                style="background-image: linear-gradient(to right, var(--color-secundario-s1), var(--color-primario-p3)); -webkit-background-clip:text; background-clip:text; color: transparent;">
+                                3 simples pasos
+                            </span>
                         </h1>
                         <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                             Proceso 100% digital, rápido y seguro. Matricúlate desde cualquier lugar
@@ -88,37 +96,42 @@
                             class="bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                             <div class="flex items-center justify-between mb-6">
                                 <h3 class="text-xl font-bold">Progreso de Matrícula</h3>
-                                <span
-                                    class="bg-[#DDE3E8] text-[#00264B] px-3 py-1 rounded-full text-sm font-medium">75%</span>
+                                <span class="bg-[#DDE3E8] text-[#00264B] px-3 py-1 rounded-full text-sm font-medium"
+                                    style="background-color: var(--color-neutral); color: var(--color-primario-p1);">75%</span>
                             </div>
                             <div class="space-y-4">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-[#4A84F7] rounded-full flex items-center justify-center">
+                                    <div class="w-8 h-8 bg-[#4A84F7] rounded-full flex items-center justify-center"
+                                        style="background-color: var(--color-primario-p3);">
                                         <i data-lucide="check" class="h-4 w-4 text-white"></i>
                                     </div>
                                     <span class="text-gray-700">Datos personales</span>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-[#4A84F7] rounded-full flex items-center justify-center">
+                                    <div class="w-8 h-8 bg-[#4A84F7] rounded-full flex items-center justify-center"
+                                        style="background-color: var(--color-primario-p3);">
                                         <i data-lucide="check" class="h-4 w-4 text-white"></i>
                                     </div>
                                     <span class="text-gray-700">Selección de cursos</span>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-[#E27227] rounded-full flex items-center justify-center">
+                                    <div class="w-8 h-8 bg-[#E27227] rounded-full flex items-center justify-center"
+                                        style="background-color: var(--color-secundario-s1);">
                                         <i data-lucide="clock" class="h-4 w-4 text-white"></i>
                                     </div>
                                     <span class="text-gray-700">Pago de matrícula</span>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-[#DDE3E8] rounded-full flex items-center justify-center">
+                                    <div class="w-8 h-8 bg-[#DDE3E8] rounded-full flex items-center justify-center"
+                                        style="background-color: var(--color-neutral);">
                                         <i data-lucide="circle" class="h-4 w-4 text-white"></i>
                                     </div>
                                     <span class="text-gray-400">Confirmación</span>
                                 </div>
                             </div>
                             <div class="mt-6">
-                                <div class="bg-[#DDE3E8] rounded-full h-2">
+                                <div class="bg-[#DDE3E8] rounded-full h-2"
+                                    style="background-color: var(--color-neutral);">
                                     <div class="progress-bar w-3/4 rounded-full"></div>
                                 </div>
                             </div>
@@ -129,11 +142,13 @@
         </section>
 
         <!-- Tipos de Matrícula -->
-        <section id="tipos" class="py-20 bg-gradient-to-br from-white to-[#DDE3E8]/40">
+        <section id="tipos" class="py-20 bg-gradient-to-br from-white to-[#DDE3E8]/40"
+            style="background-image: linear-gradient(to bottom right, white, color-mix(in srgb, var(--color-neutral) 40%, transparent));">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-black mb-4">
-                        Tipos de <span class="gradient-text">Matrícula</span>
+                        Tipos de <span class="gradient-text"
+                            style="background-image: linear-gradient(to right, var(--color-secundario-s1), var(--color-primario-p3)); -webkit-background-clip:text; background-clip:text; color: transparent;">Matrícula</span>
                     </h2>
                     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
                         Encuentra el tipo de matrícula que se adapte a tu situación académica
@@ -142,11 +157,13 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @forelse($tipos as $tipo)
-                        <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#1A4FD3]">
+                        <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#1A4FD3]"
+                            style="border-left-color: var(--color-primario-p2);">
                             <div class="flex items-center justify-between mb-6">
-                                <div class="bg-[#DDE3E8] p-3 rounded-xl">
-                                    <i
-                                        class="{{ $tipo->icono ?: 'fa-solid fa-circle-info' }} text-[#1A4FD3] text-2xl"></i>
+                                <div class="bg-[#DDE3E8] p-3 rounded-xl"
+                                    style="background-color: var(--color-neutral);">
+                                    <i class="{{ $tipo->icono ?: 'fa-solid fa-circle-info' }} text-[#1A4FD3] text-2xl"
+                                        style="color: var(--color-primario-p2);"></i>
                                 </div>
                             </div>
                             <h3 class="text-2xl font-bold mb-3">{{ $tipo->titulo }}</h3>
@@ -168,7 +185,9 @@
             <div class="container mx-auto px-4 md:px-12">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-black mb-4">
-                        <span class="gradient-text">Requisitos</span> Para Matrícula
+                        <span class="gradient-text"
+                            style="background-image: linear-gradient(to right, var(--color-secundario-s1), var(--color-primario-p3)); -webkit-background-clip:text; background-clip:text; color: transparent;">Requisitos</span>
+                        Para Matrícula
                     </h2>
                     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
                         Toda la información que necesitas para completar tu proceso de matrícula
@@ -177,14 +196,15 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     @foreach ($requisitos as $req)
-                        <div
-                            class="bg-gradient-to-br from-[#DDE3E8] to-white rounded-2xl p-8 shadow-lg border border-[#DDE3E8]">
+                        <div class="bg-gradient-to-br from-[#DDE3E8] to-white rounded-2xl p-8 shadow-lg border border-[#DDE3E8]"
+                            style="background-image: linear-gradient(to bottom right, var(--color-neutral), white); border-color: var(--color-neutral);">
                             <div class="flex items-center mb-6">
-                                <div class="bg-[#1A4FD3] text-white p-3 rounded-xl mr-4">
-                                    {{-- Icono desde BD (Font Awesome) --}}
+                                <div class="bg-[#1A4FD3] text-white p-3 rounded-xl mr-4"
+                                    style="background-color: var(--color-primario-p2);">
                                     <i class="{{ $req->icono ?: 'fa-solid fa-circle-info' }} text-xl"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-[#00264B]">
+                                <h3 class="text-2xl font-bold text-[#00264B]"
+                                    style="color: var(--color-primario-p1);">
                                     {{ $req->titulo }}
                                 </h3>
                             </div>
@@ -193,7 +213,8 @@
                                 @forelse($req->detalles as $det)
                                     <div class="flex items-start gap-3">
                                         <span
-                                            class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#4A84F7] text-white shrink-0 mt-1">
+                                            class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#4A84F7] text-white shrink-0 mt-1"
+                                            style="background-color: var(--color-primario-p3);">
                                             <i class="fa-solid fa-check text-[10px] leading-none"></i>
                                         </span>
                                         <span class="text-gray-700 text-justify">{{ $det->descripcion }}</span>
@@ -209,13 +230,14 @@
         </section>
 
         <!-- Proceso de Matrícula -->
-        <section id="proceso" class="py-20 bg-gradient-to-r from-[#00264B] to-[#1A4FD3] text-white">
+        <section id="proceso" class="py-20 bg-gradient-to-r from-[#00264B] to-[#1A4FD3] text-white"
+            style="background-image: linear-gradient(to right, var(--color-primario-p1), var(--color-primario-p2));">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-black mb-4">
-                        Proceso <span class="text-[#DDE3E8]">súper fácil</span>
+                        Proceso <span class="text-[#DDE3E8]" style="color: var(--color-neutral);">súper fácil</span>
                     </h2>
-                    <p class="text-xl text-[#DDE3E8] max-w-2xl mx-auto">
+                    <p class="text-xl text-[#DDE3E8] max-w-2xl mx-auto" style="color: var(--color-neutral);">
                         Solo {{ $pasos->count() }} pasos para completar tu matrícula de forma digital
                     </p>
                 </div>
@@ -226,45 +248,50 @@
                             @foreach ($pasos as $paso)
                                 <div class="text-center relative">
                                     <div class="relative mb-6">
-                                        {{-- número dentro del círculo --}}
-                                        <div
-                                            class="w-20 h-20 bg-gradient-to-br from-[#4A84F7] to-[#1A4FD3] rounded-full
-                                      flex items-center justify-center mx-auto shadow-lg">
+                                        <!-- número dentro del círculo -->
+                                        <div class="w-20 h-20 bg-gradient-to-br from-[#4A84F7] to-[#1A4FD3] rounded-full flex items-center justify-center mx-auto shadow-lg"
+                                            style="background-image: linear-gradient(to bottom right, var(--color-primario-p3), var(--color-primario-p2));">
                                             <span class="text-2xl font-black text-white">
                                                 {{ $paso->numero_paso ?? $loop->iteration }}
                                             </span>
                                         </div>
 
-                                        {{-- conector (solo si NO es el último) --}}
+                                        <!-- conector (solo si NO es el último) -->
                                         @if (!$loop->last)
-                                            <div
-                                                class="hidden md:block absolute top-10 left-full w-full h-0.5
-                                        bg-gradient-to-r from-[#4A84F7] to-[#DDE3E8]">
+                                            <div class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-[#4A84F7] to-[#DDE3E8]"
+                                                style="background-image: linear-gradient(to right, var(--color-primario-p3), var(--color-neutral));">
                                             </div>
                                         @endif
                                     </div>
 
-                                    {{-- título y descripción --}}
+                                    <!-- título y descripción -->
                                     <h3 class="text-xl font-bold mb-3">{{ $paso->titulo }}</h3>
                                     @if (!empty($paso->descripcion))
-                                        <p class="text-[#DDE3E8] text-justify">{{ $paso->descripcion }}</p>
+                                        <p class="text-[#DDE3E8] text-justify" style="color: var(--color-neutral);">
+                                            {{ $paso->descripcion }}
+                                        </p>
                                     @endif
                                 </div>
                             @endforeach
                         </div>
                     </div>
                 @else
-                    <p class="text-center text-[#DDE3E8]">Pronto publicaremos los pasos del proceso.</p>
+                    <p class="text-center text-[#DDE3E8]" style="color: var(--color-neutral);">
+                        Pronto publicaremos los pasos del proceso.
+                    </p>
                 @endif
             </div>
         </section>
 
         <!-- Cronograma -->
-        <section id="cronograma" class="py-20 bg-gradient-to-br from-white to-[#DDE3E8]/40">
+        <section id="cronograma" class="py-20 bg-gradient-to-br from-white to-[#DDE3E8]/40"
+            style="background-image: linear-gradient(to bottom right, white, color-mix(in srgb, var(--color-neutral) 40%, transparent));">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-black mb-4">
-                        <span class="gradient-text">Cronograma</span> 2025
+                        <span class="gradient-text"
+                            style="background-image: linear-gradient(to right, var(--color-secundario-s1), var(--color-primario-p3)); -webkit-background-clip:text; background-clip:text; color: transparent;">Cronograma</span>
+                        2025
                     </h2>
                     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
                         Fechas importantes que no puedes perderte
@@ -275,21 +302,24 @@
                     <div class="w-full max-w-md">
                         <div class="bg-white rounded-3xl p-8 shadow-xl">
                             <div class="text-center mb-8">
-                                <h3 class="text-3xl font-black text-[#1A4FD3] mb-2">Semestre 2025-I</h3>
+                                <h3 class="text-3xl font-black text-[#1A4FD3] mb-2"
+                                    style="color: var(--color-primario-p2);">Semestre 2025-I</h3>
                                 <p class="text-gray-600">Marzo - Julio 2025</p>
                             </div>
 
                             <div class="space-y-6">
                                 @forelse($cronograma as $item)
                                     <div class="flex items-start gap-4">
-                                        <div class="bg-[#1A4FD3] text-white p-3 rounded-full flex-shrink-0">
+                                        <div class="bg-[#1A4FD3] text-white p-3 rounded-full flex-shrink-0"
+                                            style="background-color: var(--color-primario-p2);">
                                             <i class="{{ $item->icono ?: 'fa-solid fa-calendar' }} text-base"></i>
                                         </div>
                                         <div>
                                             <h4 class="font-bold text-[#0f2e5a]">{{ $item->titulo }}</h4>
 
                                             @if ($item->fecha)
-                                                <p class="text-[#1A4FD3] font-medium text-sm">
+                                                <p class="text-[#1A4FD3] font-medium text-sm"
+                                                    style="color: var(--color-primario-p2);">
                                                     {{ \Carbon\Carbon::parse($item->fecha)->locale('es')->isoFormat('D [de] MMMM') }}
                                                 </p>
                                             @endif
@@ -310,22 +340,25 @@
             </div>
         </section>
 
-        <!-- CTA Final 
-        <section class="py-20 bg-gradient-to-r from-[#1A4FD3] to-[#4A84F7] text-white">
+        <!-- CTA Final -->
+        <section class="py-20 bg-gradient-to-r from-[#1A4FD3] to-[#4A84F7] text-white"
+            style="background-image: linear-gradient(to right, var(--color-primario-p2), var(--color-primario-p3));">
             <div class="container mx-auto px-4 md:px-12">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-4xl md:text-6xl font-black mb-6">¡Tu futuro te espera!</h2>
-                    <p class="text-xl text-[#DDE3E8] mb-8 max-w-2xl mx-auto">
+                    <p class="text-xl text-[#DDE3E8] mb-8 max-w-2xl mx-auto" style="color: var(--color-neutral);">
                         No esperes más. Inicia tu matrícula ahora y asegura tu lugar en la universidad líder en
                         innovación educativa.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                         <button
-                            class="bg-white text-[#1A4FD3] hover:bg-[#DDE3E8] rounded-xl px-12 py-4 text-lg font-bold transition-all transform hover:scale-105 shadow-lg">
+                            class="bg-white text-[#1A4FD3] hover:bg-[#DDE3E8] rounded-xl px-12 py-4 text-lg font-bold transition-all transform hover:scale-105 shadow-lg"
+                            style="color: var(--color-primario-p2);">
                             Matricularme Ahora
                         </button>
                         <button
-                            class="border-2 border-white text-white hover:bg-white hover:text-[#1A4FD3] rounded-xl px-12 py-4 text-lg font-bold transition-all">
+                            class="border-2 border-white text-white hover:bg-white hover:text-[#1A4FD3] rounded-xl px-12 py-4 text-lg font-bold transition-all"
+                            style="/* mantiene whites */ color: #ffffff;">
                             Hablar con Asesor
                         </button>
                     </div>

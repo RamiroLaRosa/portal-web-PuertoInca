@@ -17,9 +17,10 @@
     data-sections='@json($sections)'>
 
     {{-- Navegación lateral --}}
-    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8">
+    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8"
+        style="background-color: var(--color-primario-p1);">
         <div class="mb-12">
-            <div class="bg-[#E27227] text-white p-2 rounded-full">
+            <div class="bg-[#E27227] text-white p-2 rounded-full" style="background-color: var(--color-secundario-s1);">
                 <i data-lucide="graduation-cap" class="h-6 w-6"></i>
             </div>
         </div>
@@ -28,7 +29,8 @@
             @foreach ($sections as $sec)
                 <button onclick="scrollToSection('{{ $sec['id'] }}')"
                     class="nav-dot w-12 h-12 flex items-center justify-center rounded-full transition-all hover:bg-[#1A4FD3]/20"
-                    data-section="{{ $sec['id'] }}" title="{{ $sec['titulo'] }}">
+                    data-section="{{ $sec['id'] }}" title="{{ $sec['titulo'] }}"
+                    style="/* hover via Tailwind; base sin color */">
                     <div class="h-3 w-3 rounded-full bg-white"></div>
                 </button>
             @endforeach
@@ -60,8 +62,9 @@
                     {{-- Título + CTA --}}
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
                         <div class="flex items-center gap-4">
-                            <div class="bg-[#DDE3E8] p-3 rounded-xl">
-                                <i data-lucide="{{ $sec['icon'] }}" class="h-8 w-8 text-[#1A4FD3]"></i>
+                            <div class="bg-[#DDE3E8] p-3 rounded-xl" style="background-color: var(--color-neutral);">
+                                <i data-lucide="{{ $sec['icon'] }}" class="h-8 w-8 text-[#1A4FD3]"
+                                    style="color: var(--color-primario-p2);"></i>
                             </div>
                             <div>
                                 <h2 class="text-4xl font-black">{{ $sec['titulo'] }}</h2>
@@ -70,12 +73,14 @@
 
                         <div class="flex gap-3">
                             <button onclick="openAllDatasets('{{ $sec['id'] }}')"
-                                class="bg-[#1A4FD3] hover:opacity-90 text-white px-4 py-2 rounded-lg font-medium transition">
+                                class="bg-[#1A4FD3] hover:opacity-90 text-white px-4 py-2 rounded-lg font-medium transition"
+                                style="background-color: var(--color-primario-p2);">
                                 <i data-lucide="chart-bar" class="h-4 w-4 inline mr-2"></i>
                                 Ver en gráfico
                             </button>
                             <button onclick="exportTable('{{ $sec['id'] }}')"
-                                class="bg-[#E27227] hover:opacity-90 text-white px-4 py-2 rounded-lg font-medium transition">
+                                class="bg-[#E27227] hover:opacity-90 text-white px-4 py-2 rounded-lg font-medium transition"
+                                style="background-color: var(--color-secundario-s1);">
                                 <i data-lucide="download" class="h-4 w-4 inline mr-2"></i>
                                 Exportar
                             </button>
@@ -107,7 +112,7 @@
                             </tbody>
                         </table>
                     </div>
-                    
+
                     <br>
 
                     {{-- Gráfico --}}

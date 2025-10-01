@@ -6,24 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias - Silfer Academia</title>
+
+    {{-- Tailwind CDN --}}
     <script src="https://cdn.tailwindcss.com"></script>
+
+    {{-- Lucide --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    {{-- Estilos propios --}}
     <link rel="stylesheet" href="/css/web/noticias.css">
 </head>
 
 <body class="min-h-screen bg-[#f8f9fa] text-[#212529] font-sans">
-    <div class="fixed top-0 left-0 h-full w-20 bg-[#00264B] text-white z-50 hidden md:flex flex-col items-center py-8">
+    {{-- Sidebar --}}
+    <div class="fixed top-0 left-0 h-full w-20 text-white z-50 hidden md:flex flex-col items-center py-8"
+        style="background: var(--color-primario-p1);">
         <div class="mb-12">
             <a href="{{ url('/') }}">
-                <div class="bg-[#E27227] text-white p-2 rounded-full">
+                <div class="text-white p-2 rounded-full" style="background: var(--color-secundario-s1);">
                     <i data-lucide="graduation-cap" class="h-6 w-6"></i>
                 </div>
             </a>
         </div>
+
         <nav class="flex flex-col items-center space-y-8 flex-grow" id="sidebar-nav"></nav>
+
         <div class="mt-auto">
-            <button class="w-12 h-12 flex items-center justify-center hover:bg-[#1A4FD3] rounded-full">
+            <button class="w-12 h-12 flex items-center justify-center rounded-full transition-colors"
+                onmouseenter="this.style.background='var(--color-primario-p2)'"
+                onmouseleave="this.style.background='transparent'">
                 <i data-lucide="newspaper" class="h-5 w-5"></i>
             </button>
         </div>
@@ -32,18 +44,34 @@
     @include('header')
 
     <main class="md:pl-20 pt-16">
+
         {{-- Hero --}}
         <section class="py-20 relative overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#1A4FD3]/10 to-[#4A84F7]/10">
+                <!-- GRADIENTE -->
+                <div class="absolute top-0 left-0 w-full h-full"
+                    style="background-image: linear-gradient(135deg,
+                        color-mix(in srgb, var(--color-primario-p2) 10%, transparent),
+                        color-mix(in srgb, var(--color-primario-p3) 10%, transparent)
+                    );">
                 </div>
-                <div class="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-[#4A84F7]/20"></div>
-                <div class="absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full bg-[#E27227]/20"></div>
+
+                <!-- CÍRCULO AZUL (20%) -->
+                <div class="absolute top-1/4 right-1/4 w-64 h-64 rounded-full"
+                    style="background: color-mix(in srgb, var(--color-primario-p3) 20%, transparent);">
+                </div>
+
+                <!-- CÍRCULO NARANJA (20%) -->
+                <div class="absolute bottom-1/3 left-1/3 w-80 h-80 rounded-full"
+                    style="background: color-mix(in srgb, var(--color-secundario-s1) 20%, transparent);">
+                </div>
             </div>
+
             <div class="container mx-auto px-4 md:px-12 z-10 relative">
                 <div class="max-w-4xl mx-auto text-center">
                     <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                        Noticias y <span class="text-[#1A4FD3]">Eventos</span>
+                        Noticias y
+                        <span style="color: var(--color-primario-p2);">Eventos</span>
                     </h1>
                     <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
                         Descubre las últimas novedades, logros y eventos de nuestra comunidad educativa.
@@ -99,7 +127,8 @@
                                     </p>
                                     <a href="{{ route('noticias.show', $featured) }}">
                                         <button
-                                            class="bg-white text-[#00264B] hover:bg-white/90 rounded-full px-6 py-3 font-medium transition-colors self-start flex items-center">
+                                            class="bg-white hover:bg-white/90 rounded-full px-6 py-3 font-medium transition-colors self-start flex items-center"
+                                            style="color: var(--color-primario-p1);">
                                             Leer más <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
                                         </button>
                                     </a>
@@ -133,14 +162,18 @@
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2">{{ $item->titulo }}</h3>
                                 <p class="text-gray-600 text-sm mb-4 line-clamp-3 text-justify">
-                                    {{ Str::limit($item->descripcion, 220) }}</p>
+                                    {{ Str::limit($item->descripcion, 220) }}
+                                </p>
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center text-gray-500 text-sm">
                                         <i data-lucide="calendar" class="h-4 w-4 mr-2"></i>
                                         <span>{{ $date }}</span>
                                     </div>
                                     <a href="{{ route('noticias.show', $item) }}"
-                                        class="text-[#1A4FD3] hover:text-[#00264B] font-medium text-sm flex items-center">
+                                        class="font-medium text-sm flex items-center transition-colors"
+                                        style="color: var(--color-primario-p2);"
+                                        onmouseenter="this.style.color='var(--color-primario-p1)'"
+                                        onmouseleave="this.style.color='var(--color-primario-p2)'">
                                         Leer más <i data-lucide="arrow-right" class="ml-1 h-3 w-3"></i>
                                     </a>
                                 </div>
@@ -148,7 +181,8 @@
                         </div>
                     @empty
                         <div class="col-span-full">
-                            <div class="bg-[#DDE3E8] rounded-2xl p-10 text-center text-gray-600">
+                            <div class="rounded-2xl p-10 text-center text-gray-600"
+                                style="background: var(--color-neutral);">
                                 Aún no hay noticias para mostrar.
                             </div>
                         </div>
@@ -162,7 +196,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            window.lucide?.createIcons?.()
+            window.lucide?.createIcons?.();
         });
     </script>
     <script src="/js/web/main.js" defer></script>

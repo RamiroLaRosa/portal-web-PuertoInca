@@ -1,6 +1,5 @@
 <?php
 
-// app/Http/Controllers/LocalPublicController.php
 namespace App\Http\Controllers;
 
 use App\Models\Local;
@@ -9,9 +8,14 @@ class LocalPublicController extends Controller
 {
     public function index()
     {
-        // Tomamos el primer local activo (ajusta si tendrás varios)
-        $local = Local::where('is_active', 1)->orderBy('id')->first();
+        // Trae SOLO locales activos ordenados por id asc
+        $activos = Local::where('is_active', true)
+            ->orderBy('id')
+            ->get();
 
-        return view('nosotros.locales', compact('local'));
+        $principal    = $activos->first();     // ← 1ra fila = sede principal
+        $secundarias  = $activos->skip(1);     // ← resto = cards
+
+        return view('nosotros.locales', compact('principal', 'secundarias'));
     }
 }

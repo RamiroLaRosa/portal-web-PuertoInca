@@ -83,6 +83,35 @@
                     </div>
                 </div>
 
+
+
+                {{-- GESTOR DE COLORES --}}
+                <div class="card mb-2 mt-2">
+                    <div class="card-header fw-bold">
+                        Gestor de Colores del Portal
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('admin.colors.save') }}" class="d-flex flex-wrap gap-3 justify-content-between align-items-end">
+                            @csrf
+                            @foreach([
+                                ['color-primario-p1', 'Primario P1'],
+                                ['color-primario-p2', 'Primario P2'],
+                                ['color-primario-p3', 'Primario P3'],
+                                ['color-secundario-s1', 'Secundario S1'],
+                                ['color-neutral', 'Neutral'],
+                            ] as [$clave, $label])
+                            <div class="d-flex flex-column align-items-center" style="min-width:140px;">
+                                <label class="mb-1 fw-semibold small">{{ $label }}</label>
+                                <input type="color" name="{{ $clave }}" value="{{ $colores[$clave] ?? '#ffffff' }}" class="form-control form-control-color" style="width: 2.5rem; height: 2.5rem;">
+                                <input type="text" class="form-control mt-2 text-center" value="{{ $colores[$clave] ?? '' }}" readonly>
+                            </div>
+                            @endforeach
+                            <button class="btn btn-primary ms-2" style="min-width:140px;">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
+
+
                 {{-- FILA 1: Programas (izq), Material (centro), Acceso (der) --}}
                 <div class="row g-4 mt-1">
                     {{-- IZQUIERDA: Programas (base de altura) --}}
@@ -252,6 +281,7 @@
     @vite('resources/js/admin/dashboard/dashboard.js')
     @vite('resources/css/darkmode.css')
     @vite('resources/js/darkmode.js')
+    @vite('resources/js/admin/dashboard/coloresadministrables.js')
 </body>
 
 </html>
