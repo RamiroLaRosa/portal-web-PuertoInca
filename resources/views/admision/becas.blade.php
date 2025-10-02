@@ -269,7 +269,7 @@
 
     @include('footer')
 
-    @vite('resources/js/admision/beca.js')
+    @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="/js/web/main.js" defer></script>
 </body>
 

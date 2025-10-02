@@ -1,4 +1,3 @@
-{{-- resources/views/programas/efsrt.blade.php --}}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EFSRT - Escuela de Formación Superior en Rehabilitación y Terapia</title>
-    @vite('resources/css/css_colores_administrables/css_colores_administrables.css')
+    <!-- Variables administrables -->
+    <link rel="stylesheet" href="{{ asset('css/css_colores_administrables/css_colores_administrables.css') }}">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -42,24 +43,31 @@
 
 <body class="min-h-screen bg-brand-gray text-brand-navy font-sans scroll-smooth"
     style="background-color: var(--color-neutral); color: var(--color-primario-p1);">
+
+
     <!-- Sidebar -->
     <aside
-        class="fixed inset-x-0 bottom-0 md:inset-auto md:top-0 md:left-0 md:h-full md:w-20 z-50 flex md:flex-col items-center justify-center md:justify-start bg-white/80 md:bg-brand-navy/100 backdrop-blur md:backdrop-blur-0 border-t md:border-none">
+        class="fixed inset-x-0 bottom-0 md:inset-auto md:top-0 md:left-0 md:h-full md:w-20 z-50 flex md:flex-col 
+                 items-center justify-center md:justify-start backdrop-blur md:backdrop-blur-0 border-t md:border-none"
+        style="background-color: rgba(255,255,255,0.8); --tw-bg-opacity:1; background: var(--color-primario-p1);">
+
         <div class="hidden md:block mb-8 mt-8">
-            <div class="bg-brand-orange text-white p-2 rounded-full"
-                style="background-color: var(--color-secundario-s1);">
+            <div class="text-white p-2 rounded-full" style="background-color: var(--color-secundario-s1);">
                 <i data-lucide="heart-pulse" class="h-6 w-6"></i>
             </div>
         </div>
+
         <nav id="sidebar-nav"
             class="w-full md:w-auto flex md:flex-col items-center justify-between md:justify-start gap-2 md:gap-6 px-3 py-2 md:py-0">
             @foreach ($programas as $p)
                 @php $sid = \Illuminate\Support\Str::slug($p->nombre); @endphp
                 <button onclick="scrollToSection('{{ $sid }}')"
-                    class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all hover:bg-brand-blue/90 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                    class="nav-dot relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all 
+                           rounded-full focus:outline-none"
+                    style="hover:bg: var(--color-primario-p2); focus:ring-color: var(--color-primario-p2);"
                     data-section="{{ $sid }}" title="{{ $p->nombre }}">
-                    {{-- NO se fuerza style aquí para no romper md:bg-white (punto blanco en desktop) --}}
-                    <span class="h-2.5 w-2.5 rounded-full bg-brand-navy md:bg-white"></span>
+                    <span class="h-2.5 w-2.5 rounded-full md:bg-white"
+                        style="background-color: var(--color-primario-p1);"></span>
                 </button>
             @endforeach
         </nav>
