@@ -8,7 +8,7 @@
 
     <!-- Variables administrables -->
     <link rel="stylesheet" href="{{ asset('css/css_colores_administrables/css_colores_administrables.css') }}">
-
+    @vite('resources/css/css_colores_administrables/css_colores_administrables.css')
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

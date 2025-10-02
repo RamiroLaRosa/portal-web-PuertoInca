@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silfer Academia - Plana Jerárquica</title>
-
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/css_colores_administrables/css_colores_administrables.css')
     <script>
         // Usamos las variables de tu hoja:
         // p1:#00264B, p2:#1A4FD3, p3:#4A84F7, s1:#E27227, s2:#f78132, s3:#f99a5b, neutral:#DDE3E8

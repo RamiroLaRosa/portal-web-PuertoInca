@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contáctanos - Silfer Academia</title>
-
+    @vite('resources/css/css_colores_administrables/css_colores_administrables.css')
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide para los pictogramas azules -->
     <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
