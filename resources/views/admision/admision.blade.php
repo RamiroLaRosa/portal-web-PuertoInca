@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admisión - Silfer Academia</title>
     @vite('resources/css/css_colores_administrables/css_colores_administrables.css')
-    <!-- Variables administrables -->
-    <link rel="stylesheet" href="{{ asset('css/css_colores_administrables/css_colores_administrables.css') }}">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {

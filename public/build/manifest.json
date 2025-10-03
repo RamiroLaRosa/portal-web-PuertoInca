@@ -4,8 +4,13 @@
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/css/css_colores_administrables/css_colores_administrables.css": {
+    "file": "assets/css_colores_administrables-0cec8829.css",
+    "isEntry": true,
+    "src": "resources/css/css_colores_administrables/css_colores_administrables.css"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-02317797.js",
+    "file": "assets/app-944e67b1.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
